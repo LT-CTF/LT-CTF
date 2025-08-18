@@ -11,7 +11,7 @@
 ; than minor changes.
 
 [datafile]
-description="Longturn Traditional based on Civ2Civ3 tile_type data for Freeciv"
+description="LongTurn Capture the Flag Terrain"
 options="+Freeciv-ruleset-Devel-2017.Jan.02"
 format_version=20
 

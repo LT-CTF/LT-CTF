@@ -1,8 +1,8 @@
 #!/bin/sh
 
-GAMEID=LTX
-GAMENAME=LTX
-GAMEDIR=$HOME/server/LTX
-PORT=5061
+GAMEID=CTF##
+GAMENAME=CTF##
+GAMEDIR=$HOME/server/CTF##
+PORT=50##
 
 . ../rc.subr.fc21

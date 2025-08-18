@@ -11,7 +11,7 @@
 ; than minor changes.
 
 [datafile]
-description="Longturn Traditional based on Civ2Civ3 governments data for Freeciv"
+description="LongTurn Capture the Flag Governments"
 options="+Freeciv-ruleset-Devel-2017.Jan.02"
 format_version=20
 

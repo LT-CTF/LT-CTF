@@ -15,7 +15,7 @@
 ; then the first unit with this role will be chosen.
 
 [datafile]
-description="Longturn Traditional based on Civ2Civ3 unit_type data for Freeciv"
+description="LongTurn Capture the Flag Units"
 options="+Freeciv-ruleset-Devel-2017.Jan.02"
 format_version=20
 
