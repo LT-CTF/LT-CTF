@@ -1,26 +1,10 @@
-Games
-=====
+Freeciv21 LongTurn Capture the Flag Ruleset
+===========================================
 
-The scripts, rulesets, configuration files and freeciv-server binaries
-used for running longturn.org games.
+The aim of Capture the Flag is to provide an alternative team game experience
+to victory by conquest or spaceship. Cities are made difficult to capture with
+strong defence buffs, and spaceship are disabled. Instead, each team is
+required to build and defend a Flag wonder. The opposing team must move a unit
+adjacent to the Flag city to capture it, and return it to their own Flag city
+to score points. The game is decided by score after the turn limit has expired.
 
-How To Start A Game
-===================
-### Test Game
-    set autosaves GAMEOVER
-    set unitwaittime 0
-    set timeout 120
-    autocreate players
-    start
-
-### Real Game
-    touch input
-    tail -F input | sh LT37.sh
-    # tail -F input | sh LT37.sh autosave-07.04.2017-13:38:46.sav
-
-    echo '/autocreate players' >> input
-    echo '/start' >> input
-    echo '/syncturn 3' >> input
-
-    mkdir -p save/autosave
-    sh autosave.sh

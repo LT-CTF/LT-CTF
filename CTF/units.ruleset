@@ -37,7 +37,8 @@ flags =
     _("HelpWonder")
     _("Capturer"),   _("Can capture some enemy units.")
     _("Capturable"), _("Can be captured by some enemy units.")
-    _("Bombarder")
+    _("Bombarder"), _("Can carry out ranged bombardments on unit stacks.")
+    _("NoMelee"), _("Cannot engage in melee combat.")
     _("Cities")
     _("AddToCity")
     _("Nuclear")
@@ -46,6 +47,10 @@ flags =
     _("Cant_Fortify")
     _("RealSpy"), _("Can do real spy actions, unlike tech transfer units.")
     _("RealDiplomat"), _("Can do real diplomat actions, unlike tech transfer units.")
+    _("Interceptor"), _("Can automatically attack units that move adjacent to it.")
+    _("SeeStealth"), _("Can see adjacent stealth units.")
+    _("SeeSubsurface"), _("Can see adjacent subsurface units.")
+    _("UnlimitedCR"), _("Attacks until one unit or the other is dead.")
   }
 
 ; Names for custom unit class flags. There can be up to 12 of these.
@@ -61,6 +66,7 @@ class_flags =
     _("Missile")
     _("CanPillage")
     _("CanFortify"), _("Gets a 50% defensive bonus while in cities.")
+    _("LimitedCR"), _("Combat rounds are limited by remaining moves.")
   }
 
 ; The maximum range considered to wake sentried units, in tiles. The default
@@ -173,7 +179,7 @@ min_speed     = 1
 hp_loss_pct   = 0
 flags         = "TerrainSpeed", "DamageSlows", "CanOccupyCity", "BuildAnywhere",
                 "CollectRansom", "ZOC", "CanFortify", "CanPillage",
-                "TerrainDefense", "Airliftable", "KillCitizen"
+                "TerrainDefense", "Airliftable", "KillCitizen", "LimitedCR"
 				
 [unitclass_ancient_land]
 ; /* TRANS: Unit class: used adjectivally */
@@ -182,7 +188,7 @@ min_speed     = 1
 hp_loss_pct   = 0
 flags         = "TerrainSpeed", "DamageSlows", "CanOccupyCity", "BuildAnywhere",
                 "CollectRansom", "ZOC", "CanFortify", "CanPillage",
-                "TerrainDefense", "Airliftable", "KillCitizen"
+                "TerrainDefense", "Airliftable", "KillCitizen", "LimitedCR"
 
 [unitclass_small_unit]
 ; /* TRANS: Unit class: used adjectivally */
@@ -191,7 +197,7 @@ min_speed     = 1
 hp_loss_pct   = 0
 flags         = "TerrainSpeed", "DamageSlows", "CanOccupyCity", "BuildAnywhere",
                 "CollectRansom", "ZOC", "CanFortify", "CanPillage",
-                "TerrainDefense", "Airliftable"
+                "TerrainDefense", "Airliftable", "LimitedCR"
 
 [unitclass_land_small]
 ; /* TRANS: Unit class: used adjectivally */
@@ -199,7 +205,8 @@ name          = _("?unitclass:Small Land")
 min_speed     = 1
 hp_loss_pct   = 0
 flags         = "TerrainSpeed", "DamageSlows", "BuildAnywhere", "CollectRansom",
-                "ZOC", "CanFortify", "TerrainDefense", "DoesntOccupyTile", "Airliftable"
+                "ZOC", "CanFortify", "TerrainDefense", "DoesntOccupyTile",
+                "Airliftable"
 
 [unitclass_amphibious]
 ; /* TRANS: Unit class: used adjectivally */
@@ -207,7 +214,8 @@ name          = _("?unitclass:Amphibious")
 min_speed     = 1
 hp_loss_pct   = 0
 flags         = "TerrainSpeed", "DamageSlows", "BuildAnywhere", "CollectRansom",
-                "ZOC", "CanFortify", "TerrainDefense", "DoesntOccupyTile", "Airliftable"
+                "ZOC", "CanFortify", "TerrainDefense", "DoesntOccupyTile",
+                "Airliftable", "LimitedCR"
 
 [unitclass_land_big]
 ; /* TRANS: Unit class: used adjectivally */
@@ -215,7 +223,8 @@ name          = _("?unitclass:Big Land")
 min_speed     = 1
 hp_loss_pct   = 0
 flags         = "TerrainSpeed", "DamageSlows", "CanOccupyCity", "BuildAnywhere",
-                "CollectRansom","ZOC", "CanFortify", "KillCitizen", "Airliftable", "CanPillage"
+                "CollectRansom","ZOC", "CanFortify", "KillCitizen",
+                "Airliftable", "CanPillage", "LimitedCR"
 
 [unitclass_land_siege]
 ; /* TRANS: Unit class: used adjectivally */
@@ -223,7 +232,8 @@ name          = _("?unitclass:Big Siege")
 min_speed     = 1
 hp_loss_pct   = 0
 flags         = "TerrainSpeed", "DamageSlows", "BuildAnywhere",
-                "CollectRansom","ZOC", "CanFortify", "KillCitizen", "Airliftable", "AttackNonNative"
+                "CollectRansom","ZOC", "CanFortify", "KillCitizen",
+                "Airliftable", "AttackNonNative"
 
 [unitclass_merchant]
 ; /* TRANS: Unit class: used adjectivally */
@@ -238,7 +248,7 @@ flags         = "BuildAnywhere", "DoesntOccupyTile",
 name          = _("?unitclass:Sea")
 min_speed     = 2
 hp_loss_pct   = 0
-flags         = "AttackNonNative", "AttFromNonNative", "CanPillage"
+flags         = "AttFromNonNative", "CanPillage", "LimitedCR"
 
 [unitclass_small_sea]
 ; /* TRANS: Unit class: used adjectivally */
@@ -252,14 +262,14 @@ flags         = "AttFromNonNative"
 name          = _("?unitclass:Deep Sea")
 min_speed     = 8
 hp_loss_pct   = 0
-flags         = "AttFromNonNative", "CanPillage", "Unreachable"
+flags         = "AttFromNonNative", "CanPillage", "Unreachable", "LimitedCR"
 
 [unitclass_trireme]
 ; /* TRANS: Unit class: used adjectivally */
 name          = _("?unitclass:Trireme")
 min_speed     = 2
 hp_loss_pct   = 0
-flags         = "ZOC", "DamageSlows", "AttFromNonNative"
+flags         = "ZOC", "DamageSlows", "AttFromNonNative", "LimitedCR"
 
 [unitclass_patrol]
 ; /* TRANS: Unit class: used adjectivally */
@@ -273,7 +283,8 @@ flags         = "ZOC", "DamageSlows", "AttFromNonNative"
 name          = _("?unitclass:Helicopter")
 min_speed     = 1
 hp_loss_pct   = 10
-flags         = "Unreachable", "DoesntOccupyTile", "CanOccupyCity", "CollectRansom", "Airliftable"
+flags         = "Unreachable", "DoesntOccupyTile", "CanOccupyCity", 
+                "CollectRansom", "Airliftable", "LimitedCR"
 
 [unitclass_air]
 ; /* TRANS: Unit class: used adjectivally */
@@ -281,7 +292,15 @@ name          = _("?unitclass:Air")
 min_speed     = 1
 hp_loss_pct   = 0
 hut_behavior  = "Frighten"
-flags         = "Unreachable", "DoesntOccupyTile", "CanPillage", "Airliftable"
+flags         = "Unreachable", "DoesntOccupyTile", "CanPillage", "Airliftable",
+                "LimitedCR"
+
+[unitclass_flag]
+; /* TRANS: Unit class: used adjectivally */
+name          = _("?unitclass:Flag")
+min_speed     = 0
+hp_loss_pct   = 0
+flags         = "DoesntOccupyTile", "ZOC"
 
 ; /* <-- avoid gettext warnings
 ;
@@ -546,11 +565,11 @@ sound_fight_alt = "f_generic"
 build_cost    = 30
 pop_cost      = 2
 attack        = 0
-defense       = 1
+defense       = 5
 hitpoints     = 20
 firepower     = 1
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -590,11 +609,11 @@ sound_fight_alt = "f_generic"
 build_cost    = 15
 pop_cost      = 1
 attack        = 0
-defense       = 1
+defense       = 5
 hitpoints     = 20
 firepower     = 1
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -634,11 +653,11 @@ sound_fight_alt = "f_generic"
 build_cost    = 20
 pop_cost      = 1
 attack        = 0
-defense       = 1
+defense       = 5
 hitpoints     = 20
 firepower     = 1
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -677,11 +696,11 @@ sound_fight_alt = "f_generic"
 build_cost    = 27
 pop_cost      = 0
 attack        = 0
-defense       = 1
+defense       = 5
 hitpoints     = 12
 firepower     = 1
 move_rate     = 2
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -729,11 +748,11 @@ sound_fight_alt = "f_generic"
 build_cost    = 20
 pop_cost      = 0
 attack        = 0
-defense       = 1
+defense       = 5
 hitpoints     = 10
 firepower     = 1
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -771,11 +790,11 @@ sound_fight_alt = "f_generic"
 build_cost    = 40
 pop_cost      = 0
 attack        = 0
-defense       = 2
+defense       = 10
 hitpoints     = 20
 firepower     = 1
 move_rate     = 6
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -818,10 +837,10 @@ build_cost    = 10
 pop_cost      = 0
 attack        = 1
 defense       = 1
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
 move_rate     = 2
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
@@ -850,10 +869,10 @@ build_cost    = 15
 pop_cost      = 0
 attack        = 1
 defense       = 2
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
 move_rate     = 2
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
@@ -881,17 +900,18 @@ build_cost    = 20
 pop_cost      = 0
 attack        = 3
 defense       = 1
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
+bombard_rate  = 15
 move_rate     = 2
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "Capturer"
+flags         = "Capturer", "Bombarder"
 roles         = "DefendOk", "DefendOkStartUnit", "Hut"
 helptext      = _("\
 Archers fight with bows and arrows and have a good offensive\
@@ -913,10 +933,10 @@ build_cost    = 30
 pop_cost      = 0
 attack        = 4
 defense       = 2
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
 move_rate     = 2
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
@@ -945,10 +965,10 @@ build_cost    = 25
 pop_cost      = 0
 attack        = 2
 defense       = 3
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
@@ -981,17 +1001,18 @@ build_cost    = 40
 pop_cost      = 0
 attack        = 3
 defense       = 3
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "Capturer"
+flags         = "Capturer", "Bombarder"
 roles         = "DefendGood", "DefendGoodStartUnit", "FirstBuild",
                 "BarbarianTech", "BarbarianBuildTech", "BarbarianSeaTech"
 helptext      = _("\
@@ -1016,17 +1037,18 @@ build_cost    = 60
 pop_cost      = 0
 attack        = 2
 defense       = 2
-hitpoints     = 15
+hitpoints     = 75
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 2
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "Capturer", "Unique", "Marines"
+flags         = "Capturer", "Unique", "Marines", "Bombarder"
 roles         = "DefendGood", "DefendGoodStartUnit", "FirstBuild"
 helptext      = _("\
 Navy Troops are infantry equipped with early\
@@ -1048,17 +1070,18 @@ build_cost    = 50
 pop_cost      = 0
 attack        = 5
 defense       = 4
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "Capturer"
+flags         = "Capturer", "Bombarder"
 roles         = "DefendGood", "DefendGoodStartUnit", "FirstBuild"
 helptext      = _("\
 Riflemen are World War-era infantry, very good\
@@ -1081,17 +1104,18 @@ build_cost    = 50
 pop_cost      = 0
 attack        = 5
 defense       = 6
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "Capturer"
+flags         = "Capturer", "Bombarder"
 roles         = "DefendGood", "DefendGoodStartUnit", "FirstBuild"
 helptext      = _("\
 Infantry are modern version of infantry, relatively good\
@@ -1114,10 +1138,11 @@ build_cost    = 60
 pop_cost      = 0
 attack        = 7
 defense       = 4
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 2
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
@@ -1126,16 +1151,12 @@ uk_food       = 1
 uk_gold       = 1
 embarks       = "Helicopter"
 disembarks    = "Helicopter"
-flags         = "IgTer", "Capturer"
+flags         = "IgTer", "Capturer", "Bombarder"
 roles         = "DefendOk", "DefendOkStartUnit"
 helptext      = _("\
 Alpine Troops are highly mobile units as well as\
  excellent defenders.\
 ")
-
-
-
-
 
 [unit_partisan]
 name          = _("Partisan")
@@ -1152,10 +1173,11 @@ build_cost    = 80
 pop_cost      = 1
 attack        = 4
 defense       = 5
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 2
-vision_radius_sq = 25
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
@@ -1165,7 +1187,8 @@ uk_gold       = 1
 embarks       = "Helicopter"
 disembarks    = "Helicopter"
 vision_layer  = "Stealth"
-flags         = "IgTer", "IgZOC", "Capturer", "NoHome", "AddToCity"
+flags         = "IgTer", "IgZOC", "Capturer", "NoHome", "AddToCity", 
+                "Interceptor"
 roles         = "DefendGood", "DefendGoodStartUnit", "Partisan", "BarbarianTech"
 helptext      = _("\
 Partisans are guerilla fighters who are experts\
@@ -1203,10 +1226,11 @@ build_cost    = 30
 pop_cost      = 0
 attack        = 4
 defense       = 5
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 3
-vision_radius_sq = 25
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -1215,7 +1239,7 @@ uk_food       = 1
 uk_gold       = 1
 embarks       = "Helicopter"
 disembarks    = "Helicopter"
-flags         = "Fanatic", "Capturer"
+flags         = "Fanatic", "Capturer", "Bombarder"
 roles         = "DefendGood", "DefendGoodStartUnit"
 helptext      = _("\
 Fanatics are warriors extremely devoted to a higher cause.\
@@ -1239,10 +1263,11 @@ build_cost    = 60
 pop_cost      = 0
 attack        = 8
 defense       = 5
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
@@ -1251,7 +1276,7 @@ uk_food       = 1
 uk_gold       = 1
 embarks       = "Helicopter"
 disembarks    = "Helicopter"
-flags         = "Marines", "Capturer"
+flags         = "Marines", "Capturer", "Bombarder"
 roles         = "DefendGood", "DefendGoodStartUnit", "FirstBuild", "BarbarianSeaTech"
 helptext      = _("\
 Marines are infantry who are experts at marine warfare.\
@@ -1272,10 +1297,11 @@ build_cost    = 60
 pop_cost      = 0
 attack        = 6
 defense       = 4
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
@@ -1284,7 +1310,7 @@ uk_food       = 1
 uk_gold       = 1
 embarks       = "Helicopter"
 disembarks    = "Helicopter"
-flags         = "Paratroopers", "Capturer"
+flags         = "Paratroopers", "Capturer", "Bombarder"
 roles         = "DefendOk", "DefendOkStartUnit"
 helptext      = _("\
 Paratroopers are experts at airborne attacks. From a friendly city, \
@@ -1311,17 +1337,18 @@ build_cost    = 60
 pop_cost      = 0
 attack        = 6
 defense       = 6
-hitpoints     = 30
+hitpoints     = 150
 firepower     = 1
+bombard_rate  = 30
 move_rate     = 9
-vision_radius_sq = 28
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = ""
+flags         = "Bombarder"
 roles         = "DefendGood", "DefendGoodStartUnit", "FirstBuild"
 helptext      = _("\
 The Mechanized Infantry has the strongest inherent defensive strength \
@@ -1346,10 +1373,10 @@ build_cost    = 18
 pop_cost      = 0
 attack        = 2
 defense       = 1
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
 move_rate     = 4
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
@@ -1379,10 +1406,10 @@ build_cost    = 28
 pop_cost      = 0
 attack        = 4
 defense       = 1
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
 move_rate     = 4
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
@@ -1415,10 +1442,10 @@ build_cost    = 28
 pop_cost      = 0
 attack        = 3
 defense       = 2
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
 move_rate     = 4
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
@@ -1448,10 +1475,10 @@ build_cost    = 25
 pop_cost      = 0
 attack        = 4
 defense       = 3
-hitpoints     = 15
+hitpoints     = 75
 firepower     = 1
 move_rate     = 5
-vision_radius_sq = 28
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -1482,10 +1509,10 @@ build_cost    = 32
 pop_cost      = 0
 attack        = 6
 defense       = 2
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
 move_rate     = 4
-vision_radius_sq = 28
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
@@ -1514,17 +1541,18 @@ build_cost    = 50
 pop_cost      = 0
 attack        = 5
 defense       = 2
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 6
-vision_radius_sq = 28
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "Capturer", "Horse"
+flags         = "Capturer", "Horse", "Bombarder"
 roles         = "AttackFastStartUnit", "BarbarianBuildTech", "Hunter"
 helptext      = _("\
 Dragoons are mounted warriors carrying early firearms.\
@@ -1545,17 +1573,18 @@ build_cost    = 60
 pop_cost      = 0
 attack        = 8
 defense       = 3
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 6
-vision_radius_sq = 28
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "Capturer", "Horse"
+flags         = "Capturer", "Horse", "Bombarder"
 roles         = "AttackFastStartUnit", "Hunter"
 helptext      = _("\
 Cavalry are mounted and highly trained soldiers.\
@@ -1576,17 +1605,18 @@ build_cost    = 80
 pop_cost      = 0
 attack        = 10
 defense       = 5
-hitpoints     = 30
+hitpoints     = 150
+bombard_rate  = 30
 firepower     = 1
 move_rate     = 9
-vision_radius_sq = 40
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = ""
+flags         = "Bombarder"
 roles         = "DefendOk", "DefendOkStartUnit", "AttackFastStartUnit", "Hunter"
 helptext      = _("\
 Armors are motorized war wagons that are faster, stronger, and can take \
@@ -1611,17 +1641,18 @@ build_cost    = 30
 pop_cost      = 0
 attack        = 5
 defense       = 1
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "CityBuster", "Capturable"
+flags         = "CityBuster", "Capturable", "Bombarder", "NoMelee"
 roles         = "AttackStrongStartUnit"
 helptext      = _("\
 Catapults are large rock-throwing machines of war.\
@@ -1652,17 +1683,18 @@ build_cost    = 36
 pop_cost      = 0
 attack        = 10
 defense       = 1
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 2
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "CityBuster", "Capturable"
+flags         = "CityBuster", "Capturable", "Bombarder", "NoMelee"
 roles         = "AttackStrongStartUnit"
 helptext      = _("\
 Trebuchets are large rock-throwing machines of war.\
@@ -1693,17 +1725,18 @@ build_cost    = 50
 pop_cost      = 0
 attack        = 8
 defense       = 1
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 40
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "CityBuster", "Capturable"
+flags         = "CityBuster", "Capturable", "Bombarder", "NoMelee"
 roles         = "AttackStrongStartUnit", "BarbarianTech", "BarbarianBuildTech"
 helptext      = _("\
 Cannons are large firearms that can fire heavy projectiles over long \
@@ -1728,17 +1761,18 @@ build_cost    = 60
 pop_cost      = 0
 attack        = 10
 defense       = 2
-hitpoints     = 20
+hitpoints     = 100
+bombard_rate  = 40
 firepower     = 1
 move_rate     = 4
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "CityBuster", "Capturable"
+flags         = "CityBuster", "Capturable", "Bombarder", "NoMelee"
 roles         = "AttackStrongStartUnit"
 helptext      = _("\
 The artillery is an upgraded cannon. As with its predecessors, it is a \
@@ -1762,17 +1796,18 @@ build_cost    = 70
 pop_cost      = 0
 attack        = 12
 defense       = 2
-hitpoints     = 30
+hitpoints     = 150
+bombard_rate  = 60
 firepower     = 1
 move_rate     = 9
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "CityBuster"
+flags         = "CityBuster", "Bombarder", "NoMelee"
 roles         = "AttackStrongStartUnit"
 helptext      = _("\
 Howitzers are upgraded artillery with improved defensive as well as \
@@ -1795,10 +1830,10 @@ build_cost    = 40
 pop_cost      = 0
 attack        = 4
 defense       = 4
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
 move_rate     = 12
-vision_radius_sq = 72
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 2
 uk_happy      = 0
@@ -1806,7 +1841,8 @@ uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
 targets       = "Air", "Missile", "Helicopter"
-flags         = "AirAttacker", "HasNoZOC", "OneAttack"
+flags         = "AirAttacker", "HasNoZOC", "OneAttack", "Interceptor", 
+                "SeeStealth"
 roles         = "DefendOk", "DefendOkStartUnit"
 helptext      = _("\
 Fighters are your first airborne units. They can\
@@ -1832,10 +1868,11 @@ build_cost    = 90
 pop_cost      = 0
 attack        = 6
 defense       = 1
-hitpoints     = 30
+hitpoints     = 150
 firepower     = 1
+bombard_rate  = 60
 move_rate     = 24
-vision_radius_sq = 72
+vision_radius_sq = 4
 transport_cap = 1
 fuel          = 2
 uk_happy      = 1
@@ -1843,7 +1880,8 @@ uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
 cargo         = "Small Sea", "Missile"
-flags         = "FieldUnit", "OneAttack", "AirAttacker", "Bombarder", "HasNoZOC"
+flags         = "FieldUnit", "OneAttack", "AirAttacker", "Bombarder",
+                "HasNoZOC", "NoMelee"
 roles         = ""
 helptext      = _("\
 Bombers are specialized airborne units that may\
@@ -1857,7 +1895,6 @@ A Bomber's attack against units on land is a bombard attack; against\
 _("\
 Bombers are very good for securing access from nations with no air units.  \
 ")
-bombard_rate = 3
 
 [unit_helicopter]
 name          = _("Helicopter")
@@ -1874,10 +1911,11 @@ build_cost    = 50
 pop_cost      = 0
 attack        = 5
 defense       = 3
-hitpoints     = 30
+hitpoints     = 150
 firepower     = 1
+bombard_rate  = 30
 move_rate     = 12
-vision_radius_sq = 72
+vision_radius_sq = 4
 transport_cap = 1
 fuel          = 0
 uk_happy      = 1
@@ -1885,7 +1923,7 @@ uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
 cargo         = "Land", "Small Unit"
-flags         = "OneAttack", "AirAttacker", "HasNoZOC"
+flags         = "OneAttack", "AirAttacker", "HasNoZOC", "Bombarder"
 roles         = ""
 helptext      = _("\
 Helicopters can also transport one military land unit; while most troops \
@@ -1898,7 +1936,6 @@ Unlike other aircraft, Helicopters are not required to return to a city, \
 base, or Carrier to refuel after a set number of turns; however, care \
 must be exercised, due to the health they lose every turn.\
 ")
-bombard_rate = 2
 
 [unit_stealth_fighter]
 name          = _("Stealth Fighter")
@@ -1915,10 +1952,10 @@ build_cost    = 80
 pop_cost      = 0
 attack        = 8
 defense       = 7
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
 move_rate     = 18
-vision_radius_sq = 72
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 2
 uk_happy      = 0
@@ -1927,7 +1964,7 @@ uk_food       = 1
 uk_gold       = 1
 targets       = "Air", "Missile", "Helicopter"
 vision_layer  = "Stealth"
-flags         = "AirAttacker", "HasNoZOC", "OneAttack"
+flags         = "AirAttacker", "HasNoZOC", "OneAttack", "Interceptor"
 roles         = "DefendGood", "DefendGoodStartUnit"
 helptext      = _("\
 An improved Fighter, with improved attack and a higher movement\
@@ -1949,10 +1986,11 @@ build_cost    = 120
 pop_cost      = 0
 attack        = 9
 defense       = 3
-hitpoints     = 30
+hitpoints     = 150
 firepower     = 1
+bombard_rate  = 60
 move_rate     = 36
-vision_radius_sq = 72
+vision_radius_sq = 4
 transport_cap = 2
 fuel          = 3
 uk_happy      = 1
@@ -1961,13 +1999,13 @@ uk_food       = 1
 uk_gold       = 1
 cargo         = "Small Sea", "Missile"
 vision_layer  = "Stealth"
-flags         = "FieldUnit", "OneAttack", "AirAttacker", "Bombarder", "HasNoZOC"
+flags         = "FieldUnit", "OneAttack", "AirAttacker", "Bombarder",
+                "HasNoZOC", "NoMelee"
 roles         = "DefendOk", "DefendOkStartUnit"
 helptext      = _("\
 An improved Bomber, with improved attack and a higher movement\
  radius. It can carry one missile or Small Sea (like Advanced Torpedo) unit.\
 ")
-bombard_rate = 4
 
 [unit_trireme]
 name          = _("Trireme")
@@ -1984,10 +2022,11 @@ build_cost    = 30
 pop_cost      = 0
 attack        = 1
 defense       = 1
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
+bombard_rate  = 15
 move_rate     = 8
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 2
 fuel          = 0
 uk_happy      = 1
@@ -1995,7 +2034,7 @@ uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
 cargo         = "Land", "Small Land", "Merchant", "Ancient Land"
-flags         = "BadCityDefender", "HasNoZOC"
+flags         = "BadCityDefender", "HasNoZOC", "Bombarder"
 roles         = "Ferryboat", "FerryStartUnit"
 helptext      = _("\
 The Trireme is your first boat unit. It can act\
@@ -2025,11 +2064,11 @@ sound_fight_alt = "f_generic"
 build_cost    = 45
 pop_cost      = 0
 attack        = 0
-defense       = 2
+defense       = 10
 hitpoints     = 20
 firepower     = 1
 move_rate     = 9
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 3
 fuel          = 0
 uk_happy      = 0
@@ -2061,10 +2100,11 @@ build_cost    = 30
 pop_cost      = 0
 attack        = 1
 defense       = 2
-hitpoints     = 4
+hitpoints     = 20
 firepower     = 1
+bombard_rate  = 6
 move_rate     = 8
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 1
 fuel          = 0
 uk_happy      = 0
@@ -2072,7 +2112,8 @@ uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
 cargo         = "Small Land", "Merchant"
-flags         = "BadCityDefender", "Only_Native_Attack", "HasNoZOC", "Unique", "Unbribable"
+flags         = "BadCityDefender", "Only_Native_Attack", "HasNoZOC", "Unique",
+                "Unbribable", "Bombarder"
 roles         = "Ferryboat"
 helptext      = _("\
 The Longboat is one of your first deep ocean capable boat units\
@@ -2109,10 +2150,11 @@ build_cost    = 12
 pop_cost      = 0
 attack        = 1
 defense       = 1
-hitpoints     = 1
+hitpoints     = 5
 firepower     = 1
+bombard_rate  = 2
 move_rate     = 7
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 1
 fuel          = 0
 uk_happy      = 0
@@ -2120,7 +2162,7 @@ uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
 cargo         = "Ancient Land"
-flags         = "BadCityDefender", "Only_Native_Attack", "HasNoZOC"
+flags         = "BadCityDefender", "Only_Native_Attack", "HasNoZOC", "Bombarder"
 roles         = "Ferryboat"
 helptext      = _("\
 The War Longboat is one of your first deep ocean capable boat units\
@@ -2149,10 +2191,10 @@ build_cost    = 12
 pop_cost      = 0
 attack        = 0
 defense       = 1
-hitpoints     = 5
+hitpoints     = 25
 firepower     = 1
 move_rate     = 6
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -2160,7 +2202,7 @@ uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
 flags         = "BadCityDefender", "Only_Native_Attack", "HasNoZOC"
-roles         = "Ferryboat"
+roles         = "Explorer"
 helptext      = _("\
 The Pirogue is your first unit able to truly explore the oceans\
  since the required crew is minimal and they are able to harvest the food from the ocean. It can act\
@@ -2187,10 +2229,10 @@ build_cost    = 18
 pop_cost      = 0
 attack        = 0
 defense       = 2
-hitpoints     = 8
+hitpoints     = 40
 firepower     = 1
 move_rate     = 9
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -2198,7 +2240,7 @@ uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
 flags         = "BadCityDefender", "Only_Native_Attack", "HasNoZOC"
-roles         = "Ferryboat"
+roles         = "Explorer"
 helptext      = _("\
 The Cog is your second unit able explore the oceans without the limitations from supplies.\
  It can travel through deep ocean and also enter the rivers making it the perfect unit for investigating enemy territories if rivers are left unguarded.\
@@ -2223,18 +2265,19 @@ build_cost    = 30
 pop_cost      = 0
 attack        = 0
 defense       = 2
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
 move_rate     = 12
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "BadCityDefender", "Only_Native_Attack", "HasNoZOC"
-roles         = "Ferryboat"
+flags         = "BadCityDefender", "Only_Native_Attack", "HasNoZOC", 
+                "SeeSubsurface"
+roles         = "Explorer"
 helptext      = _("\
 The patrol cutter is a modern ship able to patrol the oceans and warn you about the enemy vessels trying to lurk into your native waters.\
  It can travel through deep ocean and also enter the rivers making it a great unit for investigating enemy controlled areas if the rivers are left unguarded.\
@@ -2259,10 +2302,11 @@ build_cost    = 45
 pop_cost      = 0
 attack        = 2
 defense       = 2
-hitpoints     = 12
+hitpoints     = 60
 firepower     = 1
+bombard_rate  = 20
 move_rate     = 8
-vision_radius_sq = 40
+vision_radius_sq = 4
 transport_cap = 1
 fuel          = 0
 uk_happy      = 0
@@ -2270,7 +2314,7 @@ uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
 cargo         = "Land", "Small Land", "Big Land", "Big Siege", "Merchant","Ancient Land"
-flags         = "BadCityDefender", "Only_Native_Attack", "HasNoZOC"
+flags         = "BadCityDefender", "Only_Native_Attack", "HasNoZOC", "Bombarder"
 roles         = "Ferryboat"
 helptext      = _("\
  A much larger version of the caravel, it is most notorious \
@@ -2302,10 +2346,11 @@ build_cost    = 40
 pop_cost      = 0
 attack        = 2
 defense       = 2
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
+bombard_rate  = 10
 move_rate     = 9
-vision_radius_sq = 28
+vision_radius_sq = 4
 transport_cap = 3
 fuel          = 0
 uk_happy      = 0
@@ -2313,7 +2358,7 @@ uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
 cargo         = "Land", "Small Land", "Merchant", "Ancient Land"
-flags         = "BadCityDefender", "Only_Native_Attack", "HasNoZOC"
+flags         = "BadCityDefender", "Only_Native_Attack", "HasNoZOC", "Bombarder"
 roles         = "Ferryboat", "FerryStartUnit", "BarbarianBoat"
 helptext      = _("\
 The Caravel is a sailing ship that can enter\
@@ -2335,10 +2380,10 @@ build_cost    = 50
 pop_cost      = 0
 attack        = 0
 defense       = 2
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
 move_rate     = 12
-vision_radius_sq = 40
+vision_radius_sq = 4
 transport_cap = 4
 fuel          = 0
 uk_happy      = 0
@@ -2369,17 +2414,18 @@ build_cost    = 50
 pop_cost      = 0
 attack        = 4
 defense       = 3
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 30
 move_rate     = 13
-vision_radius_sq = 40
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "BadCityDefender"
+flags         = "BadCityDefender", "Bombarder"
 roles         = "Hunter"
 helptext      = _("\
 The Frigate is a specialized ship with a strong offensive value,\
@@ -2402,10 +2448,11 @@ build_cost    = 70
 pop_cost      = 0
 attack        = 5
 defense       = 3
-hitpoints     = 22
+hitpoints     = 110
 firepower     = 1
+bombard_rate  = 40
 move_rate     = 15
-vision_radius_sq = 40
+vision_radius_sq = 4
 transport_cap = 1
 fuel          = 0
 uk_happy      = 0
@@ -2413,7 +2460,7 @@ uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
 cargo         = "Small Unit"
-flags         = "BadCityDefender", "Unique", "Unbribable"
+flags         = "BadCityDefender", "Unique", "Unbribable", "Bombarder"
 roles         = "Hunter"
 helptext      = _("\
 The Frigate is a specialized ship with a strong offensive value,\
@@ -2439,17 +2486,18 @@ build_cost    = 50
 pop_cost      = 0
 attack        = 5
 defense       = 6
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 30
 move_rate     = 10
-vision_radius_sq = 26
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "BadCityDefender"
+flags         = "BadCityDefender", "Bombarder"
 roles         = "Hunter"
 helptext      = _("\
 The Ironclad is an armored ship,\
@@ -2471,10 +2519,11 @@ build_cost    = 70
 pop_cost      = 0
 attack        = 4
 defense       = 4
-hitpoints     = 30
+hitpoints     = 150
 firepower     = 1
+bombard_rate  = 45
 move_rate     = 18
-vision_radius_sq = 72
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -2485,7 +2534,7 @@ bonuses       =
    { "flag", "type", "value"
      "Submarine", "DefenseMultiplier", 1
    }
-flags         = "BadCityDefender"
+flags         = "BadCityDefender", "Bombarder", "SeeSubsurface"
 roles         = "Hunter"
 helptext      = _("\
 An improved Ironclad, with better move rate and vision.\
@@ -2510,10 +2559,11 @@ build_cost    = 75
 pop_cost      = 0
 attack        = 4
 defense       = 8
-hitpoints     = 30
+hitpoints     = 150
+bombard_rate  = 45
 firepower     = 1
 move_rate     = 15
-vision_radius_sq = 72
+vision_radius_sq = 4
 transport_cap = 1
 fuel          = 0
 uk_happy      = 0
@@ -2521,7 +2571,7 @@ uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
 cargo         = "Small Sea"
-flags         = "BadCityDefender"
+flags         = "BadCityDefender", "Bombarder"
 roles         = "DefendOk", "DefendOkStartUnit"
 helptext      = _("\
 The Cruiser is a strong offensive boat unit.\
@@ -2542,10 +2592,11 @@ build_cost    = 90
 pop_cost      = 0
 attack        = 8
 defense       = 8
-hitpoints     = 30
+hitpoints     = 150
+bombard_rate  = 45
 firepower     = 1
 move_rate     = 15
-vision_radius_sq = 72
+vision_radius_sq = 4
 transport_cap = 1
 fuel          = 0
 uk_happy      = 0
@@ -2557,7 +2608,7 @@ bonuses       =
      "AirAttacker", "DefenseMultiplier", 4
    }
 cargo         = "Small Sea"
-flags         = "BadCityDefender"
+flags         = "BadCityDefender", "Bombarder"
 roles         = "DefendGood", "DefendGoodStartUnit"
 helptext      = _("\
 The AEGIS Cruiser is equipped with an advanced\
@@ -2579,17 +2630,18 @@ build_cost    = 180
 pop_cost      = 0
 attack        = 14
 defense       = 14
-hitpoints     = 30
+hitpoints     = 150
+bombard_rate  = 60
 firepower     = 2
 move_rate     = 12
-vision_radius_sq = 72
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "BadCityDefender"
+flags         = "BadCityDefender", "Bombarder"
 roles         = "DefendOk", "DefendOkStartUnit"
 helptext      = _("\
 The Battleship is the supreme naval unit with\
@@ -2611,10 +2663,11 @@ build_cost    = 50
 pop_cost      = 0
 attack        = 12
 defense       = 4
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 60
 move_rate     = 12
-vision_radius_sq = 28
+vision_radius_sq = 4
 transport_cap = 1
 fuel          = 6
 uk_happy      = 0
@@ -2623,7 +2676,8 @@ uk_food       = 1
 uk_gold       = 1
 cargo         = "Missile"
 vision_layer  = "Subsurface"
-flags         = "BadCityDefender", "Only_Native_Attack", "Submarine"
+flags         = "BadCityDefender", "Only_Native_Attack", "Submarine",
+                "Bombarder", "Interceptor", "SeeSubsurface"
 roles         = "Hunter"
 helptext      = _("\
 Traveling under the surface of the ocean, Submarines have\
@@ -2648,10 +2702,11 @@ build_cost    = 120
 pop_cost      = 0
 attack        = 12
 defense       = 4
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 60
 move_rate     = 14
-vision_radius_sq = 28
+vision_radius_sq = 4
 transport_cap = 4
 fuel          = 10
 uk_happy      = 0
@@ -2660,7 +2715,8 @@ uk_food       = 1
 uk_gold       = 1
 cargo         = "Missile", "Nuclear", "Small Sea"
 vision_layer  = "Subsurface"
-flags         = "BadCityDefender", "Only_Native_Attack", "Submarine", "NoHome"
+flags         = "BadCityDefender", "Only_Native_Attack", "Submarine", "NoHome",
+                "Bombarder", "Interceptor", "SeeSubsurface"
 roles         = "Hunter"
 helptext      = _("\
 Traveling under the surface of the ocean, Submarines have\
@@ -2690,10 +2746,11 @@ build_cost    = 280
 pop_cost      = 0
 attack        = 10
 defense       = 6
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
+bombard_rate  = 60
 move_rate     = 16
-vision_radius_sq = 28
+vision_radius_sq = 4
 transport_cap = 2
 fuel          = 0
 uk_happy      = 0
@@ -2702,7 +2759,8 @@ uk_food       = 1
 uk_gold       = 1
 cargo         = "Missile", "Nuclear", "Small Sea"
 vision_layer  = "Subsurface"
-flags         = "BadCityDefender", "Only_Native_Attack", "Submarine", "NoHome"
+flags         = "BadCityDefender", "Only_Native_Attack", "Submarine", "NoHome",
+                "Bombarder", "Interceptor", "SeeSubsurface"
 roles         = "Hunter"
 helptext      = _("\
 Traveling deep under the surface of the ocean, these new Nuclear Submarines have\
@@ -2731,10 +2789,10 @@ build_cost    = 120
 pop_cost      = 0
 attack        = 0
 defense       = 10
-hitpoints     = 40
+hitpoints     = 200
 firepower     = 1
 move_rate     = 15
-vision_radius_sq = 96
+vision_radius_sq = 4
 transport_cap = 6
 fuel          = 0
 uk_happy      = 0
@@ -2771,10 +2829,10 @@ build_cost    = 60
 pop_cost      = 0
 attack        = 0
 defense       = 3
-hitpoints     = 30
+hitpoints     = 150
 firepower     = 1
 move_rate     = 15
-vision_radius_sq = 72
+vision_radius_sq = 4
 transport_cap = 8
 fuel          = 0
 uk_happy      = 0
@@ -2816,7 +2874,7 @@ build_cost    = 80
 pop_cost      = 0
 attack        = 12
 defense       = 0
-hitpoints     = 2
+hitpoints     = 10
 firepower     = 2
 move_rate     = 3
 vision_radius_sq = 1
@@ -2859,7 +2917,7 @@ build_cost    = 45
 pop_cost      = 0
 attack        = 15
 defense       = 0
-hitpoints     = 2
+hitpoints     = 10
 firepower     = 2
 move_rate     = 9
 vision_radius_sq = 1
@@ -2872,7 +2930,7 @@ uk_gold       = 1
 targets       = "Air", "Missile", "Helicopter", "Nuclear"
 embarks       = "Deep Sea", "Air"
 disembarks    = "Deep Sea", "Air"
-flags         = "OneAttack", "AirAttacker", "HasNoZOC"
+flags         = "OneAttack", "AirAttacker", "HasNoZOC", "Interceptor"
 roles         = ""
 helptext      = _("\
 The Air Defense Missile is a missile unit able to shoot down enemy air units.\
@@ -2903,7 +2961,7 @@ build_cost    = 45
 pop_cost      = 0
 attack        = 10
 defense       = 0
-hitpoints     = 5
+hitpoints     = 25
 firepower     = 3
 move_rate     = 18
 vision_radius_sq = 1
@@ -2942,7 +3000,7 @@ build_cost    = 90
 pop_cost      = 0
 attack        = 25
 defense       = 0
-hitpoints     = 5
+hitpoints     = 25
 firepower     = 3
 move_rate     = 35
 vision_radius_sq = 1
@@ -2988,7 +3046,7 @@ build_cost    = 200
 pop_cost      = 0
 attack        = 99
 defense       = 0
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
 move_rate     = 0
 vision_radius_sq = 1
@@ -3053,7 +3111,7 @@ build_cost    = 160
 pop_cost      = 0
 attack        = 99
 defense       = 0
-hitpoints     = 10
+hitpoints     = 50
 firepower     = 1
 move_rate     = 0
 vision_radius_sq = 1
@@ -3121,10 +3179,10 @@ build_cost    = 30
 pop_cost      = 0
 attack        = 0
 defense       = 0
-hitpoints     = 10
-firepower     = 1
+hitpoints     = 1
+firepower     = 0
 move_rate     = 5
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -3224,17 +3282,18 @@ build_cost    = 50
 pop_cost      = 0
 attack        = 0
 defense       = 0
-hitpoints     = 10
-firepower     = 1
+hitpoints     = 1
+firepower     = 0
 move_rate     = 6
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 1
-flags         = "Diplomat", "RealDiplomat","IgZOC", "NonMil", "HasNoZOC", "Spy", "RealSpy"
+flags         = "Diplomat", "RealDiplomat","IgZOC", "NonMil", "HasNoZOC",
+                "Spy", "RealSpy", "SeeStealth"
 veteran_names =
 ; /* TRANS: Spy veteran level */
   _("?spy_level:informant"),
@@ -3290,10 +3349,10 @@ build_cost    = 120
 pop_cost      = 0
 attack        = 0
 defense       = 0
-hitpoints     = 10
-firepower     = 1
+hitpoints     = 1
+firepower     = 0
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -3301,7 +3360,8 @@ uk_shield     = 1
 uk_food       = 0
 uk_gold       = 1
 vision_layer  = "Stealth"
-flags         = "Diplomat", "RealDiplomat", "IgZOC", "NonMil", "HasNoZOC", "Spy", "IgTer", "RealSpy"
+flags         = "Diplomat", "RealDiplomat", "IgZOC", "NonMil", "HasNoZOC", 
+                "Spy", "IgTer", "RealSpy", "SeeStealth"
 veteran_names =
 ; /* TRANS: Spy veteran level */
   _("?spy_level:informant"),
@@ -3366,10 +3426,10 @@ build_cost    = 40
 pop_cost      = 0
 attack        = 0
 defense       = 0
-hitpoints     = 10
-firepower     = 1
+hitpoints     = 1
+firepower     = 0
 move_rate     = 4
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -3424,10 +3484,10 @@ build_cost    = 100
 pop_cost      = 0
 attack        = 0
 defense       = 0
-hitpoints     = 10
-firepower     = 1
+hitpoints     = 1
+firepower     = 0
 move_rate     = 4
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -3482,10 +3542,10 @@ build_cost    = 120
 pop_cost      = 0
 attack        = 0
 defense       = 0
-hitpoints     = 10
-firepower     = 1
+hitpoints     = 1
+firepower     = 0
 move_rate     = 4
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -3539,11 +3599,11 @@ sound_fight_alt = "f_generic"
 build_cost    = 50
 pop_cost      = 0
 attack        = 0
-defense       = 1
+defense       = 5
 hitpoints     = 10
 firepower     = 1
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -3584,11 +3644,11 @@ sound_fight_alt = "f_generic"
 build_cost    = 50
 pop_cost      = 0
 attack        = 0
-defense       = 2
+defense       = 10
 hitpoints     = 20
 firepower     = 1
 move_rate     = 6
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -3616,18 +3676,19 @@ sound_fight_alt = "f_generic"
 build_cost    = 30
 pop_cost      = 0
 attack        = 0
-defense       = 1
+defense       = 5
 hitpoints     = 7
 firepower     = 1
 move_rate     = 3
-vision_radius_sq = 18
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 1
-flags         = "IgTer", "IgZOC", "NonMil", "HasNoZOC", "Cant_Fortify"
+flags         = "IgTer", "IgZOC", "NonMil", "HasNoZOC", "Cant_Fortify",
+                "SeeStealth"
 roles         = "Explorer", "ExplorerStartUnit"
 helptext      = _("\
 Explorers are brave individuals that are very useful for\
@@ -3663,11 +3724,11 @@ sound_fight_alt = "f_generic"
 build_cost    = 10
 pop_cost      = 0
 attack        = 0
-defense       = 2
+defense       = 10
 hitpoints     = 20
 firepower     = 1
 move_rate     = 2
-vision_radius_sq = 8
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -3704,10 +3765,10 @@ build_cost    = 40
 pop_cost      = 0
 attack        = 0
 defense       = 0
-hitpoints     = 10
-firepower     = 1
+hitpoints     = 1
+firepower     = 0
 move_rate     = 2
-vision_radius_sq = 2
+vision_radius_sq = 1
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
@@ -3731,6 +3792,84 @@ When a Barbarian Leader is killed on a tile without any defending units,\
  the 100 gold ransom is paid, but only to land units and helicopters.\
 ")
 
+[unit_flag_red]
+name          = _("?unit:Red Flag")
+class         = "Flag"
+tech_req      = "None"
+obsolete_by   = "None"
+graphic       = "u.flag_red"
+graphic_alt   = "u.leader"
+sound_move    = "m_flag_red"
+sound_move_alt = "m_generic"
+sound_fight   = "f_flag_red"
+sound_fight_alt = "f_generic"
+build_cost    = 0
+pop_cost      = 0
+attack        = 0
+defense       = 1
+hitpoints     = 50
+firepower     = 0
+move_rate     = 4
+vision_radius_sq = 1
+vision_layer  = "Stealth"
+transport_cap = 0
+fuel          = 0
+uk_happy      = 0
+uk_shield     = 0
+uk_food       = 0
+uk_gold       = 0
+flags         = "NonMil", "NoBuild", "NoHome", "Unbribable", "Unique", "NoVeteran"
+; No veteran levels (level name is never displayed)
+veteran_names = _("green")
+veteran_base_raise_chance = 0
+veteran_work_raise_chance = 0
+veteran_power_fact = 100
+veteran_move_bonus = 0
+roles         = ""
+helptext      = _("\
+The Red Team's flag. Blue team must return this to their flag wonder to score \
+points. Red team must destroy the flag to get it back. \
+")
+
+[unit_flag_blue]
+name          = _("?unit:Blue Flag")
+class         = "Flag"
+tech_req      = "None"
+obsolete_by   = "None"
+graphic       = "u.flag_blue"
+graphic_alt   = "u.leader"
+sound_move    = "m_flag_blue"
+sound_move_alt = "m_generic"
+sound_fight   = "f_flag_blue"
+sound_fight_alt = "f_generic"
+build_cost    = 0
+pop_cost      = 0
+attack        = 0
+defense       = 1
+hitpoints     = 50
+firepower     = 0
+move_rate     = 4
+vision_radius_sq = 1
+vision_layer  = "Stealth"
+transport_cap = 0
+fuel          = 0
+uk_happy      = 0
+uk_shield     = 0
+uk_food       = 0
+uk_gold       = 0
+flags         = "NonMil", "NoBuild", "NoHome", "Unbribable", "Unique", "NoVeteran"
+; No veteran levels (level name is never displayed)
+veteran_names = _("green")
+veteran_base_raise_chance = 0
+veteran_work_raise_chance = 0
+veteran_power_fact = 100
+veteran_move_bonus = 0
+roles         = ""
+helptext      = _("\
+The Blue Team's flag. Red team must return this to their flag wonder to score \
+points. Blue team must destroy the flag to get it back. \
+")
+
 [unit_awacs]
 name          = _("AWACS")
 class         = "Air"
@@ -3746,17 +3885,17 @@ build_cost    = 140
 pop_cost      = 0
 attack        = 0
 defense       = 1
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 1
 move_rate     = 35
-vision_radius_sq = 234
+vision_radius_sq = 9
 transport_cap = 0
 fuel          = 3
 uk_happy      = 0
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 1
-flags         = "HasNoZOC"
+flags         = "HasNoZOC", "SeeStealth"
 roles         = ""
 helptext      = _("\
 The AWACS (Airborne Warning and Control System) is an airplane with an \
@@ -3781,10 +3920,10 @@ build_cost    = 260
 pop_cost      = 0
 attack        = 8
 defense       = 7
-hitpoints     = 20
+hitpoints     = 100
 firepower     = 2
 move_rate     = 28
-vision_radius_sq = 72
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 4
 uk_happy      = 0
@@ -3793,7 +3932,7 @@ uk_food       = 1
 uk_gold       = 1
 targets       = "Air", "Missile", "Helicopter"
 vision_layer  = "Stealth"
-flags         = "AirAttacker"
+flags         = "AirAttacker", "SeeStealth", "Interceptor"
 roles         = "DefendGood"
 helptext      = _("\
 An improved Stealth Fighter, with a higher movement\
@@ -3819,10 +3958,11 @@ build_cost    = 240
 pop_cost      = 0
 attack        = 9
 defense       = 3
-hitpoints     = 30
+hitpoints     = 150
 firepower     = 1
+bombard_rate  = 60
 move_rate     = 35
-vision_radius_sq = 144
+vision_radius_sq = 4
 transport_cap = 2
 fuel          = 3
 uk_happy      = 1
@@ -3831,13 +3971,12 @@ uk_food       = 1
 uk_gold       = 1
 cargo         = "Small Sea", "Missile"
 vision_layer  = "Stealth"
-flags         = "FieldUnit", "OneAttack", "AirAttacker", "Bombarder"
+flags         = "FieldUnit", "OneAttack", "AirAttacker", "Bombarder", "NoMelee"
 roles         = "DefendOk"
 helptext      = _("\
 An improved Stealth Bomber, with a higher movement\
  radius. It can carry one missile or Small Sea (like Advanced Torpedo) unit.\
 ")
-bombard_rate = 4
 
 
 
@@ -3856,17 +3995,18 @@ build_cost    = 300
 pop_cost      = 0
 attack        = 24
 defense       = 12
-hitpoints     = 30
+hitpoints     = 150
+bombard_rate  = 60
 firepower     = 3
 move_rate     = 16
-vision_radius_sq = 72
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 0
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = "BadCityDefender"
+flags         = "BadCityDefender", "Bombarder"
 roles         = "DefendOk"
 helptext      = _("\
 A battleship powered by fusion power \
@@ -3890,17 +4030,18 @@ build_cost    = 120
 pop_cost      = 0
 attack        = 10
 defense       = 5
-hitpoints     = 30
+hitpoints     = 150
 firepower     = 2
+bombard_rate  = 30
 move_rate     = 9
-vision_radius_sq = 25
+vision_radius_sq = 4
 transport_cap = 0
 fuel          = 0
 uk_happy      = 1
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 1
-flags         = ""
+flags         = "Bombarder"
 roles         = "DefendOk", "Hunter"
 helptext      = _("\
 A fusion powered Armor attacking \
@@ -3924,10 +4065,10 @@ build_cost    = 200
 pop_cost      = 0
 attack        = 0
 defense       = 3
-hitpoints     = 30
+hitpoints     = 150
 firepower     = 1
 move_rate     = 28
-vision_radius_sq = 96
+vision_radius_sq = 4
 transport_cap = 2
 fuel          = 3
 uk_happy      = 0

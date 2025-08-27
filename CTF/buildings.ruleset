@@ -2506,3 +2506,50 @@ been researched by your civilization. It also allows unprovoked declaration of w
 regardless of any senate instituted by a Democracy or Federation \
 government or by the United Nations.\
 ")
+
+[building_flagpole_red]
+name		= _("Red Flagpole")
+genus		= "GreatWonder"
+reqs	=
+    { "type", "name",            "range"
+      "Tech", "Red Flag-making", "Player"
+    }
+graphic	= "b.flagpole_red"
+graphic_alt	= "b.colossus"
+obsolete_by	=
+    { "type", "name", "range"
+    }
+build_cost	= 70
+upkeep		= 0
+sabotage	= 0
+sound		= "w_flagpole_red"
+sound_alt	= "w_colossus"
+helptext	= _("\
+The Red Team's flag starts here. Make sure it's in a safe place, enemy units \
+can capture the flag if they move adjacent to this city. The flag can only be \
+returned by destroying it. Grants a big defence bonus to all team cities.\
+")
+
+[building_flagpole_blue]
+name		= _("Blue Flagpole")
+genus		= "GreatWonder"
+reqs	=
+    { "type", "name",             "range"
+      "Tech", "Blue Flag-making", "Player"
+    }
+graphic	= "b.flagpole_blue"
+graphic_alt	= "b.statue_of_liberty"
+obsolete_by	=
+    { "type", "name", "range"
+    }
+build_cost	= 70
+upkeep		= 0
+sabotage	= 0
+sound		= "w_flagpole_blue"
+sound_alt	= "w_statue_of_liberty"
+helptext	= _("\
+The Blue Team's flag starts here. Make sure it's in a safe place, enemy units \
+can capture the flag if they move adjacent to this city. The flag can only be \
+returned by destroying it. Grants a big defence bonus to all team cities.\
+")
+

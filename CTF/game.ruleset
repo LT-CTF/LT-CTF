@@ -91,7 +91,7 @@ granary_food_ini = 12, 14, 16, 20, 24, 28, 34, 40
 granary_food_inc = 0
 
 ; City center minimum outputs
-min_city_center_food    = 1
+min_city_center_food    = 0
 min_city_center_shield  = 0
 min_city_center_trade   = 0
 
@@ -178,7 +178,7 @@ paradrop_to_transport    = FALSE
 ;            have enough gold, random buildings from random cities are sold.
 ;            If still more gold is needed, then random units with gold
 ;            upkeep are disbanded.
-gold_upkeep_style = "Mixed"
+gold_upkeep_style = "Nation"
 
 ; How many points of output one basic unit consists of. Typically you
 ; want this to be some 10^n.
@@ -221,7 +221,7 @@ total_factor = 100
 ; 2/3 move points will have attack power 2/3 of normal.
 ; If this is set to FALSE units will attack with full strength even if they
 ; have only fractional moves left.
-tired_attack = TRUE
+tired_attack = FALSE
 
 ; With some rules it`s possible that neither side of a combat dies.
 ; Set this to TRUE if unit should never gain veterancy from such a combat.
@@ -236,7 +236,7 @@ nuke_pop_loss_pct = 30
 ; Percentage chance of a city defender surviving nuclear attack. When set
 ; to 50 roughly half of defenders will survive nuclear attack. When set to
 ; 0 no defenders will survive. When set to 100 all defenders will survive.
-nuke_defender_survival_chance_pct = 20
+nuke_defender_survival_chance_pct = 100
 
 [auto_attack]
 ; An auto attack may be triggered when another unit moves to an adjacent
@@ -250,11 +250,10 @@ nuke_defender_survival_chance_pct = 20
 attack_actions= "Capture Units", "Bombard", "Attack", "Suicide Attack"
 
 if_attacker =
-    { "type",         "name",    "range", "present"
-      "DiplRel",      "War",     "Local", TRUE
-      "MinMoveFrags", "1",       "Local", TRUE
-      ; Not a good idea to nuke our own area.
-      "UnitFlag",     "Nuclear", "Local", FALSE
+    { "type",         "name",        "range", "present"
+      "DiplRel",      "War",         "Local", TRUE
+      "MinMoveFrags", "1",           "Local", TRUE
+      "UnitFlag",     "Interceptor", "Local", TRUE
     }
 
 [actions]
@@ -271,7 +270,7 @@ force_capture_units = TRUE
 ; If force_bombard is set to TRUE it is illegal for an actor unit to
 ; explode nuclear or perform a regular attack against a tile if it can
 ; bombard it in stead.
-force_bombard = TRUE
+force_bombard = FALSE
 
 ; If force_explode_nuclear is set to TRUE it is illegal for an actor unit
 ; to perform a regular attack against a tile if it can do explode nuclear
@@ -527,6 +526,12 @@ ui_name_transport_embark = _("%sEmbark%s")
 ;user_action_1_max_range              = 3
 ;user_action_1_actor_consuming_always = FALSE
 
+ui_name_user_action_1                = _("%sCapture the Flag%s")
+user_action_1_target_kind            = "individual cities"
+user_action_1_min_range              = 0
+user_action_1_max_range              = 1
+user_action_1_actor_consuming_always = FALSE
+
 ; Suppress automatic help text generation about what enables and/or
 ; disables the following actions.
 ;
@@ -778,15 +783,6 @@ target_reqs    =
       "MaxUnitsOnTile", "1", "Local", TRUE
     }
 
-[actionenabler_traderoute]
-action = "Establish Trade Route"
-actor_reqs    =
-    { "type",   "name", "range", "present"
-      "UnitFlag", "TradeRoute", "Local", TRUE
-      "MinMoveFrags", "1", "Local", TRUE
-      "UnitState", "HasHomeCity", "Local", TRUE
-    }
-
 [actionenabler_help_build_wonder]
 action = "Help Wonder"
 actor_reqs    =
@@ -939,6 +935,7 @@ action = "Attack"
 actor_reqs    =
     { "type",          "name",         "range", "present"
       "UnitFlag",      "NonMil",       "Local", FALSE
+      "UnitFlag",      "NoMelee",      "Local", FALSE
       "UnitClassFlag", "Missile",      "Local", FALSE
       "MinMoveFrags",  "1",            "Local", TRUE
       "UnitState",     "OnNativeTile", "Local", TRUE
@@ -948,12 +945,13 @@ actor_reqs    =
 [actionenabler_attack_marines]
 action = "Attack"
 actor_reqs    =
-    { "type",          "name",    "range", "present"
-      "UnitFlag",      "NonMil",  "Local", FALSE
-      "UnitClassFlag", "Missile", "Local", FALSE
-      "MinMoveFrags",  "1",       "Local", TRUE
-      "UnitFlag",      "Marines", "Local", TRUE
-      "DiplRel",       "War",     "Local", TRUE
+    { "type",          "name",     "range", "present"
+      "UnitFlag",      "NonMil",   "Local", FALSE
+      "UnitFlag",      "NoMelee",  "Local", FALSE
+      "UnitClassFlag", "Missile",  "Local", FALSE
+      "MinMoveFrags",  "1",        "Local", TRUE
+      "UnitFlag",      "Marines",  "Local", TRUE
+      "DiplRel",       "War",      "Local", TRUE
     }
 
 [actionenabler_attack_att_from_non_native]
@@ -961,6 +959,7 @@ action = "Attack"
 actor_reqs    =
     { "type",          "name",             "range", "present"
       "UnitFlag",      "NonMil",           "Local", FALSE
+      "UnitFlag",      "NoMelee",          "Local", FALSE
       "UnitClassFlag", "Missile",          "Local", FALSE
       "MinMoveFrags",  "1",                "Local", TRUE
       "UnitClassFlag", "AttFromNonNative", "Local", TRUE
@@ -975,6 +974,76 @@ actor_reqs    =
       "UnitClassFlag", "Missile", "Local", TRUE
       "MinMoveFrags",  "1",       "Local", TRUE
       "DiplRel",       "War",     "Local", TRUE
+    }
+
+[actionenabler_capture_flag_red]
+action = "User Action 1" ; Capture the Flag
+actor_reqs    =
+    { "type",          "name",          "range", "present"
+      "UnitClassFlag", "CanOccupyCity", "Local", TRUE
+      "UnitFlag",      "NonMil",        "Local", FALSE
+      "DiplRel",       "War",           "Local", TRUE
+      "MinMoveFrags",  "1",             "Local", TRUE
+      "UnitState",     "OnLivableTile", "Local", TRUE
+      "Building",      "Blue Flagpole", "Team",  TRUE
+    }
+target_reqs    =
+    { "type",          "name",          "range", "present"
+      "Building",      "Red Flagpole",  "City",  TRUE
+      "Extra",         "Flag Captured", "Local", FALSE
+    }
+
+[actionenabler_capture_flag_marines_red]
+action = "User Action 1" ; Capture the Flag
+actor_reqs    =
+    { "type",          "name",          "range", "present"
+      "UnitClassFlag", "CanOccupyCity", "Local", TRUE
+      "UnitFlag",      "NonMil",        "Local", FALSE
+      "DiplRel",       "War",           "Local", TRUE
+      "MinMoveFrags",  "1",             "Local", TRUE
+      "UnitFlag",      "Marines",       "Local", TRUE
+      "UnitState",     "OnLivableTile", "Local", FALSE
+      "Building",      "Blue Flagpole", "Team",  TRUE
+    }
+target_reqs    =
+    { "type",          "name",          "range", "present"
+      "Building",      "Red Flagpole",  "City",  TRUE
+      "Extra",         "Flag Captured", "Local", FALSE
+    }
+
+[actionenabler_capture_flag_blue]
+action = "User Action 1" ; Capture the Flag
+actor_reqs    =
+    { "type",          "name",          "range", "present"
+      "UnitClassFlag", "CanOccupyCity", "Local", TRUE
+      "UnitFlag",      "NonMil",        "Local", FALSE
+      "DiplRel",       "War",           "Local", TRUE
+      "MinMoveFrags",  "1",             "Local", TRUE
+      "UnitState",     "OnLivableTile", "Local", TRUE
+      "Building",      "Red Flagpole",  "Team",  TRUE
+    }
+target_reqs    =
+    { "type",          "name",          "range", "present"
+      "Building",      "Blue Flagpole", "City",  TRUE
+      "Extra",         "Flag Captured", "Local", FALSE
+    }
+
+[actionenabler_capture_flag_marines_blue]
+action = "User Action 1" ; Capture the Flag
+actor_reqs    =
+    { "type",          "name",          "range", "present"
+      "UnitClassFlag", "CanOccupyCity", "Local", TRUE
+      "UnitFlag",      "NonMil",        "Local", FALSE
+      "DiplRel",       "War",           "Local", TRUE
+      "MinMoveFrags",  "1",             "Local", TRUE
+      "UnitFlag",      "Marines",       "Local", TRUE
+      "UnitState",     "OnLivableTile", "Local", FALSE
+      "Building",      "Red Flagpole",  "Team",  TRUE
+    }
+target_reqs    =
+    { "type",          "name",          "range", "present"
+      "Building",      "Blue Flagpole", "City",  TRUE
+      "Extra",         "Flag Captured", "Local", FALSE
     }
 
 [actionenabler_conquer_city_native]
@@ -1137,23 +1206,10 @@ actor_reqs    =
       "UnitFlag",      "Settlers",     "Local", TRUE
     }
 
-[actionenabler_fortify_terrain]
+[actionenabler_fortify]
 action        = "Fortify"
 actor_reqs    =
     { "type",          "name",         "range", "present"
-      "UnitClassFlag", "CanFortify",   "Local", TRUE
-      "UnitFlag",      "Cant_Fortify", "Local", FALSE
-      "TerrainFlag",   "NoFortify",    "Local", FALSE
-      "Activity",      "Fortified",    "Local", FALSE
-    }
-
-[actionenabler_fortify_city]
-action        = "Fortify"
-actor_reqs    =
-    { "type",          "name",         "range", "present"
-      "UnitClassFlag", "CanFortify",   "Local", TRUE
-      "UnitFlag",      "Cant_Fortify", "Local", FALSE
-      "CityTile",      "Center",       "Local", TRUE
       "Activity",      "Fortified",    "Local", FALSE
     }
 
@@ -1462,7 +1518,7 @@ tech_leakage = "All Players"
 ; "Basic"  - upkeep is calculated as:
 ;     <Cost of technology> / tech_upkeep_divider - tech_upkeep_free
 ; "Cities" - upkeep is calculated like "Basic", but multiplied by number of cities
-tech_upkeep_style = "Basic"
+tech_upkeep_style = "None"
 
 ; upkeep cost is divided by this value
 tech_upkeep_divider = 300
@@ -1475,10 +1531,10 @@ free_tech_method = "Goal"
 
 [culture]
 ; Minimum culture points for cultural domination victory
-victory_min_points = 1800000
+victory_min_points = 3000000
 
 ; How big lead relative to second best player is needed for victory
-victory_lead_pct   = 200
+victory_lead_pct   = 150
 
 ; How much existing history grows each turn. This makes older history
 ; of the same original value more valuable as newer history, as it has
@@ -1845,31 +1901,168 @@ colorlist =
 ; _("Team 2"),
 ; _("Team 3"),
 ; etc...
+names =
+  _("Red Team"),
+  _("Blue Team")
 
 [settings]
 ; freeciv game settings for civ2civ3 ruleset
 ;
-set =
-    { "name", "value"
-     "aifill", 6
-      "generator", "FRACTAL"
-      "topology", "WRAPX|WRAPY|ISO"
-      "mapsize", "PLAYER"
-      "tilesperplayer", 100
-      "tinyisles", "ENABLED"
-      "temperature", 60
-      "flatpoles", 0
-      "startunits", "cwsx"
-      "citymindist", 3
-      "techlevel", 1
-      "borders", "ENABLED"
-      "foggedborders", "ENABLED"
-      "restrictinfra", "ENABLED"
-      "unreachableprotects", "DISABLED"
-      "onsetbarbs", 120
-      "occupychance", 100
-      "razechance", 10
-      "techlossforgiveness", 0
-      "techlossrestore", 50
-      "revolentype", "FIXED"
-    }
+set = {
+"name", "value"
+
+; Players
+"aifill", 8
+"autotoggle", "ENABLED" ; Automatically AI toggles when players connect/disconnect
+"citynames", "PLAYER_UNIQUE" ; Each player cannot have multiple cities with the same name
+"first_timeout", -1
+"fixedlength", "DISABLED"
+"maxplayers", 8
+"minplayers", 0
+"nationset", "all"
+"naturalcitynames", "ENABLED"
+"persistentready", "DISABLED"
+"phasemode", "ALL"
+"plrcolormode", "PLR_ORDER"
+"revealmap", ""
+"timeaddenemymove", 0
+"timeout", -1
+"traitdistribution", "FIXED"
+"turnblock", "ENABLED"
+"unitwaittime", 0
+"unitwaittime_extended", "DISABLED"
+"unitwaittime_style", "ACTIVITIES"
+
+; Security
+"allowtake", "HAhadOob"
+"kicktime", 1800 ; 30 minutes before kicked players can reconnect
+
+; Starting conditions
+"dispersion", 6 ; Start units scattered within 6 tiles of spawn
+"gold", 50 ; Starting gold
+"startcity", "DISABLED" ; Start with a city already built
+"startpos", "ALL" ; All players start on the same continent
+"startunits", "cccccwwwwwwxx" ; 5 settlers, 6 workers, and 2 explorers
+"teamplacement", "CLOSEST" ; Start team members close together
+
+; Map
+"alltemperate", "ENABLED" ; Enable to remove poles
+"flatpoles", 0 ; Poles have normal height
+"gameseed", 0 ; Random
+"generator", "FRACTAL"
+"huts", 0
+"landmass", 60
+"mapseed", 0
+"mapsize", "PLAYER"
+"separatepoles", "DISABLED" ; Poles can attach to other continents
+"singlepole", "DISABLED" ; Bipolar world
+;"size", 4 ; "mapsize" must be "FULLSIZE"
+"specials", 300 ; 300 per 1000 tiles
+"steepness", 45
+"temperature", 60
+"tilesperplayer", 400
+"tinyisles", "ENABLED"
+"topology", "WRAPX|WRAPY|ISO|HEX"
+"wetness", 60
+;"xsize", 64 ; "mapsize" must be "XYSIZE"
+;"ysize", 64 ; "mapsize" must be "XYSIZE"
+
+; Cities
+"aqueductloss", 0 ; Cities at cap lose no food stocks per turn
+"citymindist", 5 ; At least 4 tiles gap between cities
+"foodbox", 100
+"fulltradesize", 1 ; No size restriction on trade yields
+"notradesize", 0
+"rapturedelay", 3
+"shieldbox", 100
+
+; City Combat
+"killcitizen", "ENABLED"
+"razechance", 10 ; 10% chance each building gets destroyed on conquest
+"savepalace", "ENABLED"
+
+; Migration
+"mgr_distance", 0
+"mgr_foodneeded", "DISABLED"
+"mgr_nationchance", 50
+"mgr_turninterval", 1
+"mgr_worldchance", 30
+"migration", "DISABLED"
+
+; Tech
+"conquercost", 0
+"diplbulbcost", 0
+"freecost", 0
+"multiresearch", "ENABLED" ; Every tech has its own bulb counter
+"sciencebox", 100
+"team_pooled_research", "DISABLED"
+"techleak", 150
+"techlevel", 0
+"techlossforgiveness", -1
+"techlossrestore", 100
+"techpenalty", 0 ; No penalty for switching techs
+
+; Trade Routes
+"caravan_bonus_style", "CLASSIC"
+"trade_revenue_style", "CLASSIC"
+"trademindist", 999 ; Disabled
+"tradeworldrelpct", 50
+
+; Borders
+"borders", "DISABLED"
+"foggedborders", "DISABLED"
+"happyborders", "DISABLED"
+"restrictinfra", "DISABLED"
+
+; Diplomacy
+"contactturns", 2 ; Contact for one full turn after the turn they met
+"diplgoldcost", 0
+"diplomacy", "TEAM"
+"techlost_donor", 100 ; If you trade a tech to a teammate you lose it yourself
+"techlost_recv", 0 ; You always learn the traded tech
+"trading_city", "ENABLED"
+"trading_gold", "ENABLED"
+"trading_tech", "ENABLED"
+
+; Intelligence
+"fogofwar", "ENABLED"
+"demography", "szNnciwASLaPEgRMmuklOCqrb" ; Everything
+
+; Espionage
+"diplchance", 40
+"incite_gold_capt_chance", 0
+"incite_gold_loss_chance", 0
+
+; Combat
+"autoattack", "ENABLED"
+"homecaughtunits", "ENABLED" ; Captured units are assigned a home city
+"killstack", "DISABLED"
+"occupychance", 100 ; Move units into tiles that you successfully attack
+"unreachableprotects", "DISABLED"
+
+; Logistics
+"airliftingstyle", ""
+"killunhomed", 0
+
+; Governance
+"civilwarsize", 2
+"revolen", 2
+"revolentype", "FIXED"
+
+; Events
+"animals", 0
+"barbarians", "DISABLED"
+"disasters", 10
+"globalwarming", "ENABLED"
+"globalwarming_percent", 1
+"nuclearwinter", "ENABLED"
+"nuclearwinter_percent", 1
+"onsetbarbs", 9999
+
+; Victory
+"endspaceship", "DISABLED" ; No spaceship ending
+"endturn", 100 ; Score victory after 100 turns
+"spaceship_travel_time", 50
+"victories", "SPACERACE|CULTURE" ; Space race just gives points that can be used as a tie-breaker
+
+}

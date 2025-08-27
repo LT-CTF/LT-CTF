@@ -1,0 +1,59 @@
+[effect_calendar_base]
+type    = "Turn_Years"
+value   = 400
+
+[effect_calendar_T11]
+type    = "Turn_Years"
+value   = -300
+reqs    =
+    { "type", "name", "range"
+      "MinYear", "0", "World"
+    }
+
+[effect_calendar_T21]
+type    = "Turn_Years"
+value   = -50
+reqs    =
+    { "type", "name", "range"
+      "MinYear", "1000", "World"
+    }
+
+[effect_calendar_T31]
+type    = "Turn_Years"
+value   = -25
+reqs    =
+    { "type", "name", "range"
+      "MinYear", "1500", "World"
+    }
+
+[effect_calendar_T41]
+type    = "Turn_Years"
+value   = -15
+reqs    =
+    { "type", "name", "range"
+      "MinYear", "1750", "World"
+    }
+
+[effect_calendar_T56]
+type    = "Turn_Years"
+value   = -5
+reqs    =
+    { "type", "name", "range"
+      "MinYear", "1900", "World"
+    }
+
+[effect_calendar_T74]
+type    = "Turn_Years"
+value   = -3
+reqs    =
+    { "type", "name", "range"
+      "MinYear", "1990", "World"
+    }
+
+[effect_calendar_T83]
+type    = "Turn_Years"
+value   = -1
+reqs    =
+    { "type", "name", "range"
+      "MinYear", "2008", "World"
+    }

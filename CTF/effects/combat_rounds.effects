@@ -1,0 +1,2007 @@
+; Note: combat_rounds.effects is automatically generated using Jinja2.
+; See: https://jinja.palletsprojects.com/en/stable/templates/ for reference. 
+; Please make any changes to combat_rounds.effects.j2 and then run
+; `j2 CTF/effects/combat_rounds.effects.j2 -o CTF/effects/combat_rounds.effects`
+
+[effect_combat_rounds_land_base]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",         "range", "present"
+      "UnitClassFlag", "LimitedCR",    "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",  "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed", "Local", TRUE
+      "UnitFlag",      "IgTer",        "Local", FALSE
+    }
+
+
+[effect_combat_rounds_land_2mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "2",             "Local", TRUE
+      "MinHitPoints", "5", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_3mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "3",             "Local", TRUE
+      "MinHitPoints", "7", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_4mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "4",             "Local", TRUE
+      "MinHitPoints", "9", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_5mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "5",             "Local", TRUE
+      "MinHitPoints", "11", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_6mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "6",             "Local", TRUE
+      "MinHitPoints", "13", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_7mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "7",             "Local", TRUE
+      "MinHitPoints", "15", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_8mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "8",             "Local", TRUE
+      "MinHitPoints", "17", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_9mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "9",             "Local", TRUE
+      "MinHitPoints", "19", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_10mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "10",             "Local", TRUE
+      "MinHitPoints", "21", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_11mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "11",             "Local", TRUE
+      "MinHitPoints", "23", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_12mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "12",             "Local", TRUE
+      "MinHitPoints", "25", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_13mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "13",             "Local", TRUE
+      "MinHitPoints", "27", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_14mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "14",             "Local", TRUE
+      "MinHitPoints", "29", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_15mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "15",             "Local", TRUE
+      "MinHitPoints", "31", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_16mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "16",             "Local", TRUE
+      "MinHitPoints", "33", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_17mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "17",             "Local", TRUE
+      "MinHitPoints", "35", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_18mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "18",             "Local", TRUE
+      "MinHitPoints", "37", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_19mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "19",             "Local", TRUE
+      "MinHitPoints", "39", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_20mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "20",             "Local", TRUE
+      "MinHitPoints", "41", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_21mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "21",             "Local", TRUE
+      "MinHitPoints", "43", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_22mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "22",             "Local", TRUE
+      "MinHitPoints", "45", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_23mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "23",             "Local", TRUE
+      "MinHitPoints", "47", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_24mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "24",             "Local", TRUE
+      "MinHitPoints", "49", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_25mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "25",             "Local", TRUE
+      "MinHitPoints", "51", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_26mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "26",             "Local", TRUE
+      "MinHitPoints", "53", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_27mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "27",             "Local", TRUE
+      "MinHitPoints", "55", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_28mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "28",             "Local", TRUE
+      "MinHitPoints", "57", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_29mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "29",             "Local", TRUE
+      "MinHitPoints", "59", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_30mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "30",             "Local", TRUE
+      "MinHitPoints", "61", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_31mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "31",             "Local", TRUE
+      "MinHitPoints", "63", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_32mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "32",             "Local", TRUE
+      "MinHitPoints", "65", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_33mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "33",             "Local", TRUE
+      "MinHitPoints", "67", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_34mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "34",             "Local", TRUE
+      "MinHitPoints", "69", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_35mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "35",             "Local", TRUE
+      "MinHitPoints", "71", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_36mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "36",             "Local", TRUE
+      "MinHitPoints", "73", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_37mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "37",             "Local", TRUE
+      "MinHitPoints", "75", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_38mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "38",             "Local", TRUE
+      "MinHitPoints", "77", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_39mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "39",             "Local", TRUE
+      "MinHitPoints", "79", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_40mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "40",             "Local", TRUE
+      "MinHitPoints", "81", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_41mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "41",             "Local", TRUE
+      "MinHitPoints", "83", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_42mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "42",             "Local", TRUE
+      "MinHitPoints", "85", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_43mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "43",             "Local", TRUE
+      "MinHitPoints", "87", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_44mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "44",             "Local", TRUE
+      "MinHitPoints", "89", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_45mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "45",             "Local", TRUE
+      "MinHitPoints", "91", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_46mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "46",             "Local", TRUE
+      "MinHitPoints", "93", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_47mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "47",             "Local", TRUE
+      "MinHitPoints", "95", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_48mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "48",             "Local", TRUE
+      "MinHitPoints", "97", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_49mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "49",             "Local", TRUE
+      "MinHitPoints", "99", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_50mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "50",             "Local", TRUE
+      "MinHitPoints", "101", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_51mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "51",             "Local", TRUE
+      "MinHitPoints", "103", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_52mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "52",             "Local", TRUE
+      "MinHitPoints", "105", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_53mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "53",             "Local", TRUE
+      "MinHitPoints", "107", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_54mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "54",             "Local", TRUE
+      "MinHitPoints", "109", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_55mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "55",             "Local", TRUE
+      "MinHitPoints", "111", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_56mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "56",             "Local", TRUE
+      "MinHitPoints", "113", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_57mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "57",             "Local", TRUE
+      "MinHitPoints", "115", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_58mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "58",             "Local", TRUE
+      "MinHitPoints", "117", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_59mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "59",             "Local", TRUE
+      "MinHitPoints", "119", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_60mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "60",             "Local", TRUE
+      "MinHitPoints", "121", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_61mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "61",             "Local", TRUE
+      "MinHitPoints", "123", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_62mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "62",             "Local", TRUE
+      "MinHitPoints", "125", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_63mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "63",             "Local", TRUE
+      "MinHitPoints", "127", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_64mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "64",             "Local", TRUE
+      "MinHitPoints", "129", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_65mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "65",             "Local", TRUE
+      "MinHitPoints", "131", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_66mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "66",             "Local", TRUE
+      "MinHitPoints", "133", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_67mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "67",             "Local", TRUE
+      "MinHitPoints", "135", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_68mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "68",             "Local", TRUE
+      "MinHitPoints", "137", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_69mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "69",             "Local", TRUE
+      "MinHitPoints", "139", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_70mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "70",             "Local", TRUE
+      "MinHitPoints", "141", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_71mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "71",             "Local", TRUE
+      "MinHitPoints", "143", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_72mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "72",             "Local", TRUE
+      "MinHitPoints", "145", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_73mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "73",             "Local", TRUE
+      "MinHitPoints", "147", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_74mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "74",             "Local", TRUE
+      "MinHitPoints", "149", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_75mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "75",             "Local", TRUE
+      "MinHitPoints", "151", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_76mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "76",             "Local", TRUE
+      "MinHitPoints", "153", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_77mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "77",             "Local", TRUE
+      "MinHitPoints", "155", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_78mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "78",             "Local", TRUE
+      "MinHitPoints", "157", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_79mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "79",             "Local", TRUE
+      "MinHitPoints", "159", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_80mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "80",             "Local", TRUE
+      "MinHitPoints", "161", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_81mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "81",             "Local", TRUE
+      "MinHitPoints", "163", "Local", TRUE
+    }
+
+
+[effect_combat_rounds_land_igter_base]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",         "range", "present"
+      "UnitClassFlag", "LimitedCR",    "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",  "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed", "Local", TRUE
+      "UnitFlag",      "IgTer",        "Local", TRUE
+    }
+
+
+[effect_combat_rounds_land_igter_2mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "2",             "Local", TRUE
+      "MinHitPoints", "13", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_3mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "3",             "Local", TRUE
+      "MinHitPoints", "19", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_4mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "4",             "Local", TRUE
+      "MinHitPoints", "25", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_5mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "5",             "Local", TRUE
+      "MinHitPoints", "31", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_6mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "6",             "Local", TRUE
+      "MinHitPoints", "37", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_7mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "7",             "Local", TRUE
+      "MinHitPoints", "43", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_8mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "8",             "Local", TRUE
+      "MinHitPoints", "49", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_9mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "9",             "Local", TRUE
+      "MinHitPoints", "55", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_10mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "10",             "Local", TRUE
+      "MinHitPoints", "61", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_11mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "11",             "Local", TRUE
+      "MinHitPoints", "67", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_12mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "12",             "Local", TRUE
+      "MinHitPoints", "73", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_13mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "13",             "Local", TRUE
+      "MinHitPoints", "79", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_14mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "14",             "Local", TRUE
+      "MinHitPoints", "85", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_15mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "15",             "Local", TRUE
+      "MinHitPoints", "91", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_16mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "16",             "Local", TRUE
+      "MinHitPoints", "97", "Local", TRUE
+    }
+
+[effect_combat_rounds_land_igter_17mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "17",             "Local", TRUE
+      "MinHitPoints", "103", "Local", TRUE
+    }
+
+
+[effect_combat_rounds_sea_air_base]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",         "range", "present"
+      "UnitClassFlag", "LimitedCR",    "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",  "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed", "Local", FALSE
+      "UnitFlag",      "Submarine",    "Local", FALSE
+    }
+
+
+[effect_combat_rounds_sea_air_2mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "18",       "Local", TRUE
+      "MinHitPoints", "11", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_3mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "27",       "Local", TRUE
+      "MinHitPoints", "16", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_4mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "36",       "Local", TRUE
+      "MinHitPoints", "21", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_5mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "45",       "Local", TRUE
+      "MinHitPoints", "26", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_6mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "54",       "Local", TRUE
+      "MinHitPoints", "31", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_7mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "63",       "Local", TRUE
+      "MinHitPoints", "36", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_8mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "72",       "Local", TRUE
+      "MinHitPoints", "41", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_9mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "81",       "Local", TRUE
+      "MinHitPoints", "46", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_10mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "90",       "Local", TRUE
+      "MinHitPoints", "51", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_11mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "99",       "Local", TRUE
+      "MinHitPoints", "56", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_12mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "108",       "Local", TRUE
+      "MinHitPoints", "61", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_13mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "117",       "Local", TRUE
+      "MinHitPoints", "66", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_14mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "126",       "Local", TRUE
+      "MinHitPoints", "71", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_15mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "135",       "Local", TRUE
+      "MinHitPoints", "76", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_16mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "144",       "Local", TRUE
+      "MinHitPoints", "81", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_17mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "153",       "Local", TRUE
+      "MinHitPoints", "86", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_18mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "162",       "Local", TRUE
+      "MinHitPoints", "91", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_19mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "171",       "Local", TRUE
+      "MinHitPoints", "96", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_20mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "180",       "Local", TRUE
+      "MinHitPoints", "101", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_21mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "189",       "Local", TRUE
+      "MinHitPoints", "106", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_22mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "198",       "Local", TRUE
+      "MinHitPoints", "111", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_23mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "207",       "Local", TRUE
+      "MinHitPoints", "116", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_24mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "216",       "Local", TRUE
+      "MinHitPoints", "121", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_25mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "225",       "Local", TRUE
+      "MinHitPoints", "126", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_26mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "234",       "Local", TRUE
+      "MinHitPoints", "131", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_27mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "243",       "Local", TRUE
+      "MinHitPoints", "136", "Local", TRUE
+    }
+
+[effect_combat_rounds_sea_air_28mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "252",       "Local", TRUE
+      "MinHitPoints", "141", "Local", TRUE
+    }
+
+
+[effect_combat_rounds_submarine_base]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",         "range", "present"
+      "UnitClassFlag", "LimitedCR",    "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",  "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed", "Local", FALSE
+      "UnitFlag",      "Submarine",    "Local", TRUE
+    }
+
+
+[effect_combat_rounds_submarine_2mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "18",       "Local", TRUE
+      "MinHitPoints", "17", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_3mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "27",       "Local", TRUE
+      "MinHitPoints", "25", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_4mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "36",       "Local", TRUE
+      "MinHitPoints", "33", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_5mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "45",       "Local", TRUE
+      "MinHitPoints", "41", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_6mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "54",       "Local", TRUE
+      "MinHitPoints", "49", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_7mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "63",       "Local", TRUE
+      "MinHitPoints", "57", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_8mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "72",       "Local", TRUE
+      "MinHitPoints", "65", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_9mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "81",       "Local", TRUE
+      "MinHitPoints", "73", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_10mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "90",       "Local", TRUE
+      "MinHitPoints", "81", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_11mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "99",       "Local", TRUE
+      "MinHitPoints", "89", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_12mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "108",       "Local", TRUE
+      "MinHitPoints", "97", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_13mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "117",       "Local", TRUE
+      "MinHitPoints", "105", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_14mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "126",       "Local", TRUE
+      "MinHitPoints", "113", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_15mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "135",       "Local", TRUE
+      "MinHitPoints", "121", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_16mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "144",       "Local", TRUE
+      "MinHitPoints", "129", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_17mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "153",       "Local", TRUE
+      "MinHitPoints", "137", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_18mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "162",       "Local", TRUE
+      "MinHitPoints", "145", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_19mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "171",       "Local", TRUE
+      "MinHitPoints", "153", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_20mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "180",       "Local", TRUE
+      "MinHitPoints", "161", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_21mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "189",       "Local", TRUE
+      "MinHitPoints", "169", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_22mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "198",       "Local", TRUE
+      "MinHitPoints", "177", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_23mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "207",       "Local", TRUE
+      "MinHitPoints", "185", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_24mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "216",       "Local", TRUE
+      "MinHitPoints", "193", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_25mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "225",       "Local", TRUE
+      "MinHitPoints", "201", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_26mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "234",       "Local", TRUE
+      "MinHitPoints", "209", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_27mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "243",       "Local", TRUE
+      "MinHitPoints", "217", "Local", TRUE
+    }
+
+[effect_combat_rounds_submarine_28mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "252",       "Local", TRUE
+      "MinHitPoints", "225", "Local", TRUE
+    }
+
+

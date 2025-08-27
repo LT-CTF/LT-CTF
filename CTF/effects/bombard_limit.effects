@@ -1,0 +1,37 @@
+[effect_bomb_limit_base]
+type    = "Bombard_Limit_Pct"
+value   = 0
+
+[effect_bomb_limit_diplomatic_immunity]
+type    = "Bombard_Limit_Pct"
+value   = 100
+reqs    =
+    { "type",     "name",     "range", "present"
+      "UnitFlag", "Diplomat", "Local", TRUE
+    }
+
+[effect_bomb_limit_city]
+type    = "Bombard_Limit_Pct"
+value   = 25
+reqs    =
+    { "type",     "name",   "range", "present"
+      "CityTile", "Center", "Local", TRUE
+    }
+
+[effect_bomb_limit_city_walls]
+type    = "Bombard_Limit_Pct"
+value   = 25
+reqs    =
+    { "type",     "name",       "range", "present"
+      "CityTile", "Center",     "Local", TRUE
+      "Building", "City Walls", "City",  TRUE
+    }
+
+[effect_bomb_limit_fortress]
+type    = "Bombard_Limit_Pct"
+value   = 50
+reqs    =
+    { "type",  "name",     "range", "present"
+      "Extra", "Fortress", "Local", TRUE
+    }
+
