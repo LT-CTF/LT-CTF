@@ -1,0 +1,54 @@
+Freeciv21 LongTurn Capture the Flag Ruleset
+===========================================
+
+The aim of Capture the Flag is to provide an alternative team game experience
+to victory by conquest or spaceship. Cities are made difficult to capture with
+strong defence buffs, and spaceships don't end the game. Instead, each team is
+required to build and defend a Flag wonder. The opposing team must move a unit
+adjacent to the Flag city to capture it, and return it to their own Flag city
+to score points. The game is decided by score after the turn limit has expired.
+
+A number of adjustments were made to the LTX rules for better CTF gameplay, or
+because I felt like it. They are, in no particular order:
+
+* No minimum yields for city centre tiles
+* Gold upkeep is national. No buildings will be sold unless treasury drops below zero.
+* Auto-Attack is enabled, but only for special Interceptor flagged units.
+* Stack Kill is disabled - Instead you will have to use bombard units to whittle down stacks.
+* Military units have more hitpoints and limited combat rounds - Better survivability for your forays into enemy territory to fight your way to their flag.
+* Civilian units have normal hitpoints but more defence to compensate - They fight as well as normal but are less affected by limited combat rounds so military are more likely to be able to kill them outright if they are undefended.
+* Tired attack is off, instead combat rounds are limited by remaining moves and hitpoints.
+  * Land units get 2 Combat Rounds (CR) per move fragment. E.g. 1 MP = 18 CR.
+  * Land units that ignore terrain get 6 CR per move fragment. E.g. 1MP = 54 CR.
+  * Sea and Air units get 5 CR per full move point. E.g. 10MP = 50 CR.
+  * Submarines get 8 CR per full move point. E.g. 10MP = 80 CR.
+  * CR can never equal or exceed a unit's remaining HP.
+* Attacking costs all remaining moves - Defenders can't just skirmish and hide back in their cities, they have to come out and meet an invading force in the field.
+* Forced Bombard is off, some units are capable of both bombard and direct attacks.
+* Sea units can't attack shore, only bombard.
+* Bombardment can destroy units completely outside of cities.
+  * Cities get 25% bombardment limit.
+  * City walls increases it to 50%.
+  * The flag wonder increases it for all team cities by additional 25%.
+* Instead of destroying units, nukes act like a heavy bombardment over adjacent tiles - Can't be used to just instakill stacks any time they move towards the flag.
+* Diplomatic units only have 1HP but are immune to bombardment - No partial HP losses for bombarded spies which actually makes no difference, and they die instantly in combat.
+* Tech Upkeep is disabled
+* Cultural Victory is enabled. Your team needs at least 3m culture to win, and exceed the other team by 150%. Each capture is worth 1m, so 3-1 is a victory - This allows to end the game early if one side is a runaway winner. 
+* When your team's flag is captured, your panicked cities maximise industrial capacity in an attempt to seize it back, however this comes at a cost of pollution - Gives a weaker team an opportunity to catch up a little.
+* Hex Topology - Because I prefer hex grids. Everything has been tuned towards hex.
+* Migration is off - We're going with a higher citymindist anyway, so it doesn't matter.
+* Borders are disabled - Freely use enemy infrastructure, use military to take city tiles, and military unhappiness is only prevented within a friendly city or a fortress within 3 tiles of one.
+* Multi-research mode is on - Each tech has its own bulb counter, and there is no penalty for switching.
+* Tech trading is enabled - You can trade techs within your team, be warned however that you will lose the tech you are trading and have to research it again.
+* City trading is enabled - Swap units and cities with your teammates as much as you wish.
+* Gold trading has no fee - Transfer gold to teammates without penalty.
+* Airlift is disabled - Replaced instead with transport aircraft. No teleporting!
+* Climate Change is slow but hits hard. At 1%, it will only take effect after considerable neglect, but if it does happen, prepare for the apocalypse.
+* Spaceships arrive quickly, but don't end the game - It's just a tie-breaker for score.
+* Turn limit - 100 turns to capture the most flags.
+* Limited vision - Units can see 1-3 tiles, and most units can't detect stealth or subsurface units.
+* All units can fortify, but only some can gain a bonus for it - Sometimes you don't want to wake every boat, aircraft or civilian unit in a stack.
+* Food waste for distant cities starts at size 2 - You shouldn't settle a city only to find it can't support itself despite food all around and immediately starve.
+* After reaching empire size limits, every additional city causes unhappiness - This is about capturing the flag not sprawling empires.
+* Ruins gives trade on every tile not just those with trade - If you go to the effort of demolishing your own cities to gain +1 trade, you deserve it.
+

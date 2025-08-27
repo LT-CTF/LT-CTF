@@ -1,0 +1,70 @@
+[effect_no_base_stealth_vision]
+type    = "Unit_Vision_Radius_Sq"
+value   = -1
+reqs    =
+    { "type",        "name",       "range", "present"
+      "VisionLayer", "Stealth",    "Local", TRUE
+      "UnitFlag",    "SeeStealth", "Local", TRUE
+    }
+
+[effect_no_base_subsurface_vision]
+type    = "Unit_Vision_Radius_Sq"
+value   = -1
+reqs    =
+    { "type",        "name",          "range", "present"
+      "VisionLayer", "Subsurface",    "Local", TRUE
+      "UnitFlag",    "SeeSubsurface", "Local", TRUE
+    }
+
+; Vision benefit from fortress watchtowers
+[effect_fortress_vision]
+type    = "Unit_Vision_Radius_Sq"
+value   = 5
+reqs    =
+    { "type", "name", "range"
+      "VisionLayer", "Main", "Local"
+      "Extra", "Fortress", "Local"
+      "Tech", "Astronomy", "Player"
+    }
+
+[effect_airbase_vision]
+type    = "Unit_Vision_Radius_Sq"
+value   = 5
+reqs    =
+    { "type", "name", "range"
+      "VisionLayer", "Main", "Local"
+      "Extra", "Airbase", "Local"
+    }
+
+; Vision benefit from mountains (for every land unit)
+[effect_mountains_vision]
+type    = "Unit_Vision_Radius_Sq"
+value   = 5
+reqs    =
+    { "type", "name", "range", "present"
+      "VisionLayer", "Main", "Local"
+      "Terrain", "Mountains", "Local", TRUE
+;      "UnitClass", "Land", "Local", FALSE
+;      "UnitClass", "Small Land", "Local", FALSE
+;      "UnitClass", "Big Land", "Local", FALSE
+;      "UnitClass", "Merchant", "Local", FALSE
+      "UnitClass", "Sea", "Local", FALSE
+      "UnitClass", "Trireme", "Local", FALSE
+      "UnitClass", "Helicopter", "Local", FALSE
+      "UnitClass", "Air", "Local", FALSE
+      "UnitClass", "Missile", "Local", FALSE
+    }
+
+; Base vision range - radius of vision is sqrt(5) = 2.24 - this is intentionally smaller than the city working area
+[effect_city_vision]
+type    = "City_Vision_Radius_Sq"
+value   = 9
+
+; 5 + 5 = 10
+[effect_city_vision_1]
+type    = "City_Vision_Radius_Sq"
+value   = 7
+reqs    =
+    { "type", "name", "range"
+      "Tech", "Electricity", "Player"
+    }

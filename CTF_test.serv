@@ -48,20 +48,20 @@ set threaded_save "DISABLED"
 set demography NnciwASLaMklOCqrbszPE # Everything but Gold Income, 
                                      # Research Speed, Military Units, and 
                                      # Built Units
-set fogofwar "ENABLED"
-set revealmap ""
+set fogofwar "DISABLED"
+set revealmap START
 
 # Security
-cmdlevel hack
-set allowtake "HAhadOob"
+cmdlevel info
+set allowtake ""
 set kicktime "1800"
 
 # Players
 set autotoggle "DISABLED" # Automatically AI toggles when players connect/disconnect
 set citynames "PLAYER_UNIQUE" # Each player cannot have multiple cities with the same name
-set first_timeout "0"
-set fixedlength disabled
-set maxplayers 8
+set first_timeout "-1"
+set fixedlength enabled
+set maxplayers 500
 set minplayers 0
 set nationset all
 set naturalcitynames "ENABLED"
@@ -69,40 +69,15 @@ set persistentready "DISABLED"
 set phasemode "ALL"
 set plrcolormode "PLR_ORDER"
 set timeaddenemymove 0
-set timeout 0
+set timeout 120
 set traitdistribution "FIXED"
 set turnblock "ENABLED"
-set unitwaittime 0
+set unitwaittime 10
 set unitwaittime_extended disabled # unitwaittime also applies to newly-built
                                    # and captured/bribed units
 set unitwaittime_style ACTIVITIES
 
-set aifill 8
-aitoggle AI*1
-playernation AI*1 "Khazar" 1 "Obadiah"
-playernation AI*2 "Sri Vijaya" 1 "Jayanasa"
-playernation AI*3 "Wuerttembergian" 1 "Konrad I"
-playernation AI*4 "Sardinian" 1 "Ampsicora"
-playernation AI*5 "Jaffna" 1 "Martanda Cinkaiariyan"
-playernation AI*6 "Avar" 1 "Bayan III"
-playernation AI*7 "Andorran" 1 "Roger Bernat III"
-playernation AI*8 "Arab" 0 "Fatimah"
-team "Obadiah" "Red Team"
-team "Jayanasa" "Red Team"
-team "Konrad I" "Red Team"
-team "Ampsicora" "Red Team"
-team "Martanda Cinkaiariyan" "Blue Team"
-team "Bayan III" "Blue Team"
-team "Roger Bernat III" "Blue Team"
-team "Fatimah" "Blue Team"
+read players.serv
 hard
 start
-lua cmd register_team_member("Obadiah", "Red")
-lua cmd register_team_member("Jayanasa", "Red")
-lua cmd register_team_member("Konrad I", "Red")
-lua cmd register_team_member("Ampsicora", "Red")
-lua cmd register_team_member("Martanda Cinkaiariyan", "Blue")
-lua cmd register_team_member("Bayan III", "Blue")
-lua cmd register_team_member("Roger Bernat III", "Blue")
-lua cmd register_team_member("Fatimah", "Blue")
 

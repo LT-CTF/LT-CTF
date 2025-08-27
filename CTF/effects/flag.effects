@@ -1,0 +1,78 @@
+[effect_flag_defence_red]
+type  = "Fortify_Defense_Bonus"
+value = 500
+reqs  =
+    { "type",     "name",         "range", "present"
+      "Building", "Red Flagpole", "Team",  TRUE
+      "CityTile", "Center",       "Local", TRUE
+    }
+
+[effect_flag_visible_red]
+type  = "Wonder_Visible"
+value = 1
+reqs  =
+    { "type",     "name",         "range", "present"
+      "Building", "Red Flagpole", "City",  TRUE
+    }
+    
+[effect_flagpole_bomb_limit_red]
+type    = "Bombard_Limit_Pct"
+value   = 25
+reqs    =
+    { "type",     "name",         "range", "present"
+      "CityTile", "Center",       "Local", TRUE
+      "Building", "Red Flagpole", "Team",  TRUE
+    }
+
+[effect_flag_defence_blue]
+type  = "Fortify_Defense_Bonus"
+value = 500
+reqs  =
+    { "type",     "name",          "range", "present"
+      "Building", "Blue Flagpole", "Team",  TRUE
+      "CityTile", "Center",        "Local", TRUE
+    }
+
+[effect_flag_visible_blue]
+type  = "Wonder_Visible"
+value = 1
+reqs  =
+    { "type",     "name",          "range", "present"
+      "Building", "Blue Flagpole", "City",  TRUE
+    }
+    
+[effect_flagpole_bomb_limit_blue]
+type    = "Bombard_Limit_Pct"
+value   = 25
+reqs    =
+    { "type",     "name",          "range", "present"
+      "CityTile", "Center",        "Local", TRUE
+      "Building", "Blue Flagpole", "Team",  TRUE
+    }
+
+[effect_flag_captured_shield_output]
+type  = "Output_Bonus_2"
+value = 100
+reqs  =
+    { "type",       "name",          "range", "present"
+      "Extra",      "Flag Captured", "Local", TRUE
+      "OutputType", "Shield",        "Local", TRUE
+    }
+
+[effect_flag_captured_shields]
+type  = "Output_Add_Tile"
+value = 5
+reqs  =
+    { "type",       "name",          "range", "present"
+      "Extra",      "Flag Captured", "Local", TRUE
+      "OutputType", "Shield",        "Local", TRUE
+    }
+
+[effect_flag_captured_pollution]
+type  = "Pollu_Prod_Pct"
+value = 100
+reqs  =
+    { "type",       "name",          "range", "present"
+      "Extra",      "Flag Captured", "Local", TRUE
+    }
+

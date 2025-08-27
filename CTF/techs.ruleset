@@ -1018,3 +1018,20 @@ flags    = ""
 graphic     = "a.writing"
 graphic_alt = "-"
 cost     = 21
+
+[advance_red_flag]
+name        = _("Red Flag-making")
+req1        = "Never" ; These should be "Never" but that feature is broken
+req2        = "Never"
+flags       = ""
+graphic     = "None"
+graphic_alt = "-"
+
+[advance_blue_flag]
+name        = _("Blue Flag-making")
+req1        = "Never" ; These should be "Never" but that feature is broken
+req2        = "Never"
+flags       = ""
+graphic     = "None"
+graphic_alt = "-"
+

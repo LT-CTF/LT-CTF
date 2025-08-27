@@ -11,7 +11,7 @@
 
 [datafile]
 description="LongTurn Capture the Flag Effects"
-options="+Freeciv-ruleset-Devel-2017.Jan.02 +Bombard_Limit_Pct +Nation_Intelligence"
+options="+Freeciv-ruleset-Devel-2017.Jan.02 +Bombard_Limit_Pct +Nation_Intelligence +Vision_Layer"
 format_version=20
 
 ; /* <-- avoid gettext warnings
@@ -28,6 +28,12 @@ format_version=20
 ;                           See README.effects for help on requirements
 ;
 ; */ <-- avoid gettext warnings
+
+*include "CTF/effects/vision.effects"
+*include "CTF/effects/calendar.effects"
+*include "CTF/effects/combat_rounds.effects"
+*include "CTF/effects/bombard_limit.effects"
+*include "CTF/effects/flag.effects"
 
 ; "Away" "Novice" "Easy" "Normal" "Hard" "Cheating" "Experimental"
 [effect_ai_cheat_food]
@@ -196,29 +202,6 @@ reqs    =
       "OutputType", "Gold", "Local"
     }
 
-; Vision benefit from fortress watchtowers
-[effect_fortress_vision]
-type    = "Unit_Vision_Radius_Sq"
-value   = 18
-reqs    =
-    { "type", "name", "range"
-      "Extra", "Fortress", "Local"
-      "Tech", "Astronomy", "Player"
-    }
-
-[effect_airbase_vision]
-type    = "Unit_Vision_Radius_Sq"
-value   = 18
-reqs    =
-    { "type", "name", "range"
-      "Extra", "Airbase", "Local"
-    }
-
-
-[effect_bomb_limit_base]
-type    = "Bombard_Limit_Pct"
-value   = 1
-
 
 ; Fortress HP regen (Every Land units)
 [effect_fortress_hp_regen]
@@ -299,23 +282,25 @@ reqs    =
 ;      "UnitClass", "Missile", "Local", FALSE
     }
 
-
-
 [effect_fortified]
 type    = "Fortify_Defense_Bonus"
 value   = 50
 reqs    =
-    { "type", "name", "range"
-      "Activity", "Fortified", "Local"
+    { "type",          "name",         "range", "present"
+      "Activity",      "Fortified",    "Local", TRUE
+      "UnitClassFlag", "CanFortify",   "Local", TRUE
+      "UnitFlag",      "Cant_Fortify", "Local", FALSE
+      "TerrainFlag",   "NoFortify",    "Local", FALSE
+      "CityTile",      "Center",       "Local", FALSE
     }
 
+; Units that receive a fortify bonus are always considered fortified while in cities
 [effect_city_fortified]
 type    = "Fortify_Defense_Bonus"
 value   = 50
 reqs    =
     { "type",          "name",         "range", "present"
       "CityTile",      "Center",       "Local", TRUE
-      "Activity",      "Fortified",    "Local", FALSE
       "UnitClassFlag", "CanFortify",   "Local", TRUE
       "UnitFlag",      "Cant_Fortify", "Local", FALSE
     }
@@ -323,38 +308,6 @@ reqs    =
 [effect_trade_routes]
 type    = "Max_Trade_Routes"
 value   = 0
-
-; Base vision range - radius of vision is sqrt(5) = 2.24 - this is intentionally smaller than the city working area
-[effect_city_vision]
-type    = "City_Vision_Radius_Sq"
-value   = 5
-
-; 5 + 5 = 10
-[effect_city_vision_1]
-type    = "City_Vision_Radius_Sq"
-value   = 25
-reqs    =
-    { "type", "name", "range"
-      "Tech", "Electricity", "Player"
-    }
-
-; Vision benefit from mountains (for every land unit)
-[effect_mountains_vision]
-type    = "Unit_Vision_Radius_Sq"
-value   = 18
-reqs    =
-    { "type", "name", "range", "present"
-      "Terrain", "Mountains", "Local", TRUE
-;      "UnitClass", "Land", "Local", FALSE
-;      "UnitClass", "Small Land", "Local", FALSE
-;      "UnitClass", "Big Land", "Local", FALSE
-;      "UnitClass", "Merchant", "Local", FALSE
-      "UnitClass", "Sea", "Local", FALSE
-      "UnitClass", "Trireme", "Local", FALSE
-      "UnitClass", "Helicopter", "Local", FALSE
-      "UnitClass", "Air", "Local", FALSE
-      "UnitClass", "Missile", "Local", FALSE
-    }
 
 ; Movement penalty if ended turn at mountains (for every land unit)
 [effect_mountains_movement]
@@ -479,8 +432,9 @@ reqs    =
 type    = "Output_Waste_Pct"
 value   = 50
 reqs    =
-    { "type", "name", "range"
+    { "type",       "name", "range"
       "OutputType", "Food", "Local"
+      "MinSize",    "2",    "City"
     }
 
 ; Base 0% food waste with Anarchy
@@ -1739,7 +1693,7 @@ reqs    =
 
 [effect_empire_size_step_tribal]
 type    = "Empire_Size_Step"
-value   = 10
+value   = 1
 reqs    =
     { "type", "name", "range"
       "Gov", "Tribal", "Player"
@@ -1755,7 +1709,7 @@ reqs    =
 
 [effect_empire_size_step_despotism]
 type    = "Empire_Size_Step"
-value   = 10
+value   = 1
 reqs    =
     { "type", "name", "range"
       "Gov", "Despotism", "Player"
@@ -1763,7 +1717,7 @@ reqs    =
 
 [effect_empire_size_step_monarchy]
 type    = "Empire_Size_Step"
-value   = 20
+value   = 1
 reqs    =
     { "type", "name", "range"
       "Gov", "Monarchy", "Player"
@@ -1771,7 +1725,7 @@ reqs    =
 
 [effect_empire_size_step_communism]
 type    = "Empire_Size_Step"
-value   = 28
+value   = 1
 reqs    =
     { "type", "name", "range"
       "Gov", "Communism", "Player"
@@ -1779,7 +1733,7 @@ reqs    =
 
 [effect_empire_size_step_fundamentalism]
 type    = "Empire_Size_Step"
-value   = 20
+value   = 1
 reqs    =
     { "type", "name", "range"
       "Gov", "Fundamentalism", "Player"
@@ -1787,7 +1741,7 @@ reqs    =
 
 [effect_empire_size_step_federation]
 type    = "Empire_Size_Step"
-value   = 24
+value   = 1
 reqs    =
     { "type", "name", "range"
       "Gov", "Federation", "Player"
@@ -1795,7 +1749,7 @@ reqs    =
 
 [effect_empire_size_step_republic]
 type    = "Empire_Size_Step"
-value   = 16
+value   = 1
 reqs    =
     { "type", "name", "range"
       "Gov", "Republic", "Player"
@@ -1803,7 +1757,7 @@ reqs    =
 
 [effect_empire_size_step_democracy]
 type    = "Empire_Size_Step"
-value   = 16
+value   = 1
 reqs    =
     { "type", "name", "range"
       "Gov", "Democracy", "Player"
@@ -4738,74 +4692,6 @@ reqs	=
 type	= "Trade_Revenue_Bonus"
 value	= 1585
 
-[effect_calendar_base]
-type    = "Turn_Years"
-value   = 100
-
-; 50 - 50 = 50 -> T40 = Y0
-[effect_calendar_1]
-type    = "Turn_Years"
-value   = -50
-reqs    =
-    { "type", "name", "range"
-      "MinYear", "0", "World"
-    }
-
-; 50 - 25 = 25 -> T70 = Y1500
-[effect_calendar_2]
-type    = "Turn_Years"
-value   = -25
-reqs    =
-    { "type", "name", "range"
-      "MinYear", "1500", "World"
-    }
-
-; 25 - 15 = 10 -> T80 = Y1750
-[effect_calendar_3]
-type    = "Turn_Years"
-value   = -15
-reqs    =
-    { "type", "name", "range"
-      "MinYear", "1750", "World"
-    }
-
-; 10 - 5 = 5 -> T90 = Y1850
-[effect_calendar_4]
-type    = "Turn_Years"
-value   = -5
-reqs    =
-    { "type", "name", "range"
-      "MinYear", "1850", "World"
-    }
-
-; 5 - 2 = 3 -> T110 = Y1950 
-[effect_calendar_5]
-type    = "Turn_Years"
-value   = -2
-reqs    =
-    { "type", "name", "range"
-      "MinYear", "1950", "World"
-    }
-
-; 3 - 1 = 2 -> T120 = Y1980
-[effect_calendar_6]
-type    = "Turn_Years"
-value   = -1
-reqs    =
-    { "type", "name", "range"
-      "MinYear", "1980", "World"
-    }
-
-; 2 - 1 = 1 -> T130 = Y2000
-[effect_calendar_7]
-type    = "Turn_Years"
-value   = -1
-reqs    =
-    { "type", "name", "range"
-      "MinYear", "2000", "World"
-    }
-
-
 ; No base pop pollution; buildings will increase it
 [effect_pollu_pop]
 type    = "Pollu_Pop_Pct"
@@ -5228,6 +5114,14 @@ reqs    =
       "Action", "Capture Units", "Local", TRUE
     }
 
+[effect_action_success_move_cost_attack]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type", "name", "range", "present"
+      "Action", "Attack", "Local", TRUE
+    }
+
 [effect_action_success_move_cost_bombard]
 type    = "Action_Success_Actor_Move_Cost"
 value   = 65535
@@ -5279,10 +5173,6 @@ reqs    =
       "CityTile", "Center", "Local"
       "OutputType", "Luxury", "Local"
     }
-
-
-
-
 	
 [effect_school_of_baudhayana_sutras]
 type    = "Output_Add_Tile"
@@ -5293,9 +5183,6 @@ reqs    =
       "CityTile", "Center", "Local"
       "OutputType", "Science", "Local"
     }
-	
-
-
 
 [effect_marco_polos_embassy]
 type    = "Output_Bonus"
@@ -5408,7 +5295,7 @@ reqs    =
 
 
 [effect_ruins_trade]
-type    = "Output_Inc_Tile"
+type    = "Output_Add_Tile"
 value   = 1
 reqs    =
     { "type", "name", "range"
@@ -5892,7 +5779,6 @@ reqs    =
     { "type", "name", "range"
       "MinSize", "1", "City"
     }
-	
 
 ; for future purposes not yet implemented
 ; [effect_conquest_tech]

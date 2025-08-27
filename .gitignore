@@ -1,9 +1,11 @@
 */save/
+*.sav*
 ltpass*
 */input*
 */output
 */core.*
-*/freeciv-score.log
+*freeciv-score.log
+server.log
 
 *.orig
 *.rej

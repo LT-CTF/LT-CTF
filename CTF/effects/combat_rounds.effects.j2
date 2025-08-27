@@ -1,0 +1,109 @@
+; Note: combat_rounds.effects is automatically generated using Jinja2.
+; See: https://jinja.palletsprojects.com/en/stable/templates/ for reference. 
+; Please make any changes to combat_rounds.effects.j2 and then run
+; `j2 CTF/effects/combat_rounds.effects.j2 -o CTF/effects/combat_rounds.effects`
+
+[effect_combat_rounds_land_base]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",         "range", "present"
+      "UnitClassFlag", "LimitedCR",    "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",  "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed", "Local", TRUE
+      "UnitFlag",      "IgTer",        "Local", FALSE
+    }
+
+{% for mp in range(2, 82) %}
+[effect_combat_rounds_land_{{ mp | int }}mpf]
+type  = "Combat_Rounds"
+value = 2
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", FALSE
+      "MinMoveFrags", "{{ mp | int }}",             "Local", TRUE
+      "MinHitPoints", "{{ ((mp * 2) + 1) | int }}", "Local", TRUE
+    }
+{% endfor %}
+
+[effect_combat_rounds_land_igter_base]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",         "range", "present"
+      "UnitClassFlag", "LimitedCR",    "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",  "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed", "Local", TRUE
+      "UnitFlag",      "IgTer",        "Local", TRUE
+    }
+
+{% for mp in range(2, 18) %}
+[effect_combat_rounds_land_igter_{{ mp | int }}mpf]
+type  = "Combat_Rounds"
+value = 6
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", TRUE
+      "UnitFlag",      "IgTer",                     "Local", TRUE
+      "MinMoveFrags", "{{ mp | int }}",             "Local", TRUE
+      "MinHitPoints", "{{ ((mp * 6) + 1) | int }}", "Local", TRUE
+    }
+{% endfor %}
+
+[effect_combat_rounds_sea_air_base]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",         "range", "present"
+      "UnitClassFlag", "LimitedCR",    "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",  "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed", "Local", FALSE
+      "UnitFlag",      "Submarine",    "Local", FALSE
+    }
+
+{% for mp in range(2, 29) %}
+[effect_combat_rounds_sea_air_{{ mp | int }}mp]
+type  = "Combat_Rounds"
+value = 5
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", FALSE
+      "MinMoveFrags", "{{ (mp * 9) | int }}",       "Local", TRUE
+      "MinHitPoints", "{{ ((mp * 5) + 1) | int }}", "Local", TRUE
+    }
+{% endfor %}
+
+[effect_combat_rounds_submarine_base]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",         "range", "present"
+      "UnitClassFlag", "LimitedCR",    "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",  "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed", "Local", FALSE
+      "UnitFlag",      "Submarine",    "Local", TRUE
+    }
+
+{% for mp in range(2, 29) %}
+[effect_combat_rounds_submarine_{{ mp | int }}mp]
+type  = "Combat_Rounds"
+value = 8
+reqs  =
+    { "type",          "name",                      "range", "present"
+      "UnitClassFlag", "LimitedCR",                 "Local", TRUE
+      "UnitFlag",      "UnlimitedCR",               "Local", FALSE
+      "UnitClassFlag", "TerrainSpeed",              "Local", FALSE
+      "UnitFlag",      "Submarine",                 "Local", TRUE
+      "MinMoveFrags", "{{ (mp * 9) | int }}",       "Local", TRUE
+      "MinHitPoints", "{{ ((mp * 8) + 1) | int }}", "Local", TRUE
+    }
+{% endfor %}
+
