@@ -30,6 +30,8 @@ because I felt like it. They are, in no particular order:
   * Cities get 25% bombardment limit.
   * City walls increases it to 50%.
   * The flag wonder increases it for all team cities by additional 25%.
+  * Fortified units get 25% when not in cities or forts.
+  * Units in open stop at 1% one time only in a last gasp defence.
 * Instead of destroying units, nukes act like a heavy bombardment over adjacent tiles - Can't be used to just instakill stacks any time they move towards the flag.
 * Diplomatic units only have 1HP but are immune to bombardment - No partial HP losses for bombarded spies which actually makes no difference, and they die instantly in combat.
 * Tech Upkeep is disabled

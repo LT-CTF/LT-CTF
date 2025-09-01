@@ -11,18 +11,12 @@
 -- file called 'default.lua'. The one loaded if your ruleset
 -- does not provide an override is default/default.lua.
 
----------------
--- Utilities --
----------------
+--------------
+-- Settings --
+--------------
 
-function find_player(player_name)
-  for player in players_iterate() do
-    if player.name == player_name then
-      return player
-    end
-  end
-  return nil
-end
+ctf_flag_delivered_score = 1000
+ctf_final_turn = 100
 
 ----------------
 -- City Ruins --
@@ -107,39 +101,10 @@ signal.connect("nuke_exploded", "nuke_bombard_area")
 -- CTF Teams --
 ---------------
 
-function register_team_member(player_name, team_name)
-  local player = find_player(player_name)
-  assert(player, "%s is a not a player", player_name)
-  assert(team_name == "Red" or team_name == "Blue", "Team must be Red or Blue")
-  _G[string.format("player_team_%s", player_name)] = team_name
-end
-
-function player_team_name(player)
-  return _G[string.format("player_team_%s", player.name)]
-end
-
-function team_iterate(team_name)
+function flag_unit_team(flag_unit)
+  local team_name = string.match(flag_unit.utype:rule_name(), "^(%S+) Flag$")
   if not team_name then return nil end
-  local get_next_player = players_iterate()
-  return function()
-    local player = get_next_player()
-    while player do
-      if player_team_name(player) == team_name then
-        return player
-      end
-      player = get_next_player()
-    end
-    return nil
-  end
-end
-
-function flag_team_name(flag_unit)
-  if flag_unit.utype:rule_name() == "Red Flag" then
-    return "Red"
-  elseif flag_unit.utype:rule_name() == "Blue Flag" then
-    return "Blue"
-  end
-  return nil
+  return find.team(team_name)
 end
 
 -- Since granting techs in the .serv file doesn't seem to work, we'll do it 
@@ -147,21 +112,89 @@ end
 function first_city_built(city)
   -- Only on first city
   if not city:has_building(find.building_type("Palace")) then return false end
-  local team_name = player_team_name(city.owner)
-  if not team_name then return false end -- Not on a flag team
+  local team_name = city.owner.team.name
   local flag_tech = find.tech_type(team_name .. " Flag-making")
   assert(flag_tech, "Missing %s Flag-making tech", team_name)
   city.owner:give_tech(flag_tech, 0, false, "team_start_tech")
+  return false
 end
 
 signal.connect("city_built", "first_city_built")
+
+-----------------
+-- CTF Scoring --
+-----------------
+
+function team_flag_score(team)
+  return tonumber(_G[string.format("score_%s", team.name)] or 0)
+end
+
+function team_civ_score(team)
+  local civ_score = 0
+  for player in team:members_iterate() do
+    civ_score = civ_score + player:civilization_score()
+  end
+  return civ_score
+end
+
+function team_flag_score_add(team, amount)
+  local score = team_flag_score(team) + amount
+  _G[string.format("score_%s", team.name)] = score
+end
+
+function team_leaderboard()
+  local team_scores = {}
+  for team in find.teams_iterate() do
+    table.insert(team_scores, {
+      name = team.name,
+      flag_score = team_flag_score(team),
+      civ_score = team_civ_score(team)
+    })
+  end
+  table.sort(team_scores, function(a, b)
+    if a.flag_score == b.flag_score then
+      return a.civ_score > b.civ_score
+    else
+      return a.flag_score > b.flag_score
+    end
+  end)
+  return team_scores
+end
+
+function notify_leaderboard()
+  local team_scores = team_leaderboard()
+  notify.event(nil, nil, E.SCRIPT, "Leaderboard:")
+  for i, team in ipairs(team_scores) do
+    notify.event(nil, nil, E.SCRIPT, "- %s: %d flag points (%d civ score)",
+      team.name, team.flag_score, team.civ_score)
+  end
+end
+
+function check_scores(turn, year)
+  notify_leaderboard()
+  if turn >= ctf_final_turn then
+    local winning_team = find.team(team_leaderboard()[1].name)
+    notify.event(nil, nil, E.SCRIPT, "The %s team has won!", winning_team.name)
+    local winner = nil
+    local highscore = 0
+    for player in winning_team:members_iterate() do
+      if player:civilization_score() > highscore then
+        highscore = player:civilization_score()
+        winner = player
+      end
+    end
+    winner:victory()
+  end
+end
+
+signal.connect("turn_begin", "check_scores")
 
 ------------------------------------
 -- Capture the Flag custom action --
 ------------------------------------
 
 function flag_captured_bonus_on(flag_team)
-  for player in team_iterate(flag_team) do
+  for player in flag_team:members_iterate() do
     for city in player:cities_iterate() do
       city.tile:create_extra("Flag Captured")
     end
@@ -169,7 +202,7 @@ function flag_captured_bonus_on(flag_team)
 end
 
 function flag_captured_bonus_off(flag_team)
-  for player in team_iterate(flag_team) do
+  for player in flag_team:members_iterate() do
     for city in player:cities_iterate() do
       city.tile:remove_extra("Flag Captured")
     end
@@ -178,8 +211,8 @@ end
 
 function capture_the_flag(action, actor, target)
   if action:rule_name() ~= "User Action 1" then return false end
-  local flag_team = player_team_name(target.owner)
-  local flag_utype = find.utype(flag_team .. " Flag")
+  local flag_team = target.owner.team
+  local flag_utype = find.unit_type(flag_team.name .. " Flag")
   local flag = actor.owner:create_unit(actor.tile, flag_utype, 0, nil, -1)
   flag_captured_bonus_on(flag_team)
   notify.event(nil, target.tile, E.SCRIPT, 
@@ -195,17 +228,20 @@ signal.connect("action_started_unit_city", "capture_the_flag")
 -------------------
 
 function flag_delivered(unit, src_tile, dst_tile)
-  local city = dst_tile.city
+  local city = dst_tile:city()
   if not city then return false end
-  local flag_team = flag_team_name(unit)
+  local flag_team = flag_unit_team(unit)
   if not flag_team then return false end
-  local holder_team = player_team_name(flag.owner)
-  if not city:has_building(holder_team .. " Flagpole") then return false end
+  local holder_team = unit.owner.team
+  local flagpole = find.building_type(holder_team.name .. " Flagpole")
+  if not city:has_building(flagpole) then return false end
   flag_captured_bonus_off(flag_team)
-  unit.owner:add_history(1000000)
+  team_flag_score_add(unit.owner.team, ctf_flag_delivered_score)
+  unit.owner:add_history(ctf_flag_delivered_score)
   notify.event(nil, unit.tile, E.SCRIPT, 
     "%s has delivered the %s flag to the %s team base!", 
-    unit.owner.name, flag_team, holder_team)
+    unit.owner.name, flag_team.name, holder_team.name)
+  notify_leaderboard()
   unit:kill("used", nil)
   return false
 end
@@ -217,19 +253,31 @@ signal.connect("unit_moved", "flag_delivered")
 --------------------
 
 function flag_destroyed(unit, loser, reason, killer)
-  local flag_team = flag_team_name(unit)
+  local flag_team = flag_unit_team(unit)
   if not flag_team then return false end
   flag_captured_bonus_off(flag_team)
   if killer then
     notify.event(nil, unit.tile, E.SCRIPT, 
       "%s has recovered the %s flag!", 
-      killer.name, flag_team)
+      killer.name, flag_team.name)
   else
     notify.event(nil, unit.tile, E.SCRIPT, 
       "The %s flag has been recovered.", 
-      flag_team)
+      flag_team.name)
   end
   return false
 end
 
 signal.connect("unit_lost", "flag_destroyed")
+
+-------------
+-- Logging --
+-------------
+
+function log_flagpole_built(building, city)
+  local team_name = string.match(building:rule_name(), "^(%S+) Flagpole$")
+  if not team_name then return false end
+  log.normal("The %s flag wonder has been built in %s", team_name, city.name)
+end
+
+signal.connect("building_built", "log_flagpole_built")

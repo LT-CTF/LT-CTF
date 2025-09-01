@@ -78,31 +78,13 @@ set unitwaittime_extended disabled # unitwaittime also applies to newly-built
 set unitwaittime_style ACTIVITIES
 
 set aifill 8
-aitoggle AI*1
-playernation AI*1 "Khazar" 1 "Obadiah"
-playernation AI*2 "Sri Vijaya" 1 "Jayanasa"
-playernation AI*3 "Wuerttembergian" 1 "Konrad I"
-playernation AI*4 "Sardinian" 1 "Ampsicora"
-playernation AI*5 "Jaffna" 1 "Martanda Cinkaiariyan"
-playernation AI*6 "Avar" 1 "Bayan III"
-playernation AI*7 "Andorran" 1 "Roger Bernat III"
-playernation AI*8 "Arab" 0 "Fatimah"
-team "Obadiah" "Red Team"
-team "Jayanasa" "Red Team"
-team "Konrad I" "Red Team"
-team "Ampsicora" "Red Team"
-team "Martanda Cinkaiariyan" "Blue Team"
-team "Bayan III" "Blue Team"
-team "Roger Bernat III" "Blue Team"
-team "Fatimah" "Blue Team"
+team AI*1 "Red"
+team AI*2 "Red"
+team AI*3 "Red"
+team AI*4 "Red"
+team AI*5 "Blue"
+team AI*6 "Blue"
+team AI*7 "Blue"
+team AI*8 "Blue"
 hard
-start
-lua cmd register_team_member("Obadiah", "Red")
-lua cmd register_team_member("Jayanasa", "Red")
-lua cmd register_team_member("Konrad I", "Red")
-lua cmd register_team_member("Ampsicora", "Red")
-lua cmd register_team_member("Martanda Cinkaiariyan", "Blue")
-lua cmd register_team_member("Bayan III", "Blue")
-lua cmd register_team_member("Roger Bernat III", "Blue")
-lua cmd register_team_member("Fatimah", "Blue")
 
