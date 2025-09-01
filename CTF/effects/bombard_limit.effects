@@ -2,6 +2,29 @@
 type    = "Bombard_Limit_Pct"
 value   = 0
 
+[effect_bomb_limit_last_gasp]
+type    = "Bombard_Limit_Pct"
+value   = 1
+reqs    =
+    { "type",         "name",     "range", "present"
+      "MinHitPoints", "4",        "Local", TRUE
+      "CityTile",     "Center",   "Local", FALSE
+      "Extra",        "Fortress", "Local", FALSE
+    }
+
+[effect_bomb_limit_fortified]
+type    = "Bombard_Limit_Pct"
+value   = 24
+reqs    =
+    { "type",          "name",         "range", "present"
+      "Activity",      "Fortified",    "Local", TRUE
+      "UnitClassFlag", "CanFortify",   "Local", TRUE
+      "UnitFlag",      "Cant_Fortify", "Local", FALSE
+      "TerrainFlag",   "NoFortify",    "Local", FALSE
+      "CityTile",      "Center",       "Local", FALSE
+      "Extra",         "Fortress",     "Local", FALSE
+    }
+
 [effect_bomb_limit_diplomatic_immunity]
 type    = "Bombard_Limit_Pct"
 value   = 100
@@ -35,3 +58,4 @@ reqs    =
       "Extra", "Fortress", "Local", TRUE
     }
 
+; See also `effect_flagpole_bomb_limit` in `flag.effects`

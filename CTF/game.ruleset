@@ -1902,8 +1902,8 @@ colorlist =
 ; _("Team 3"),
 ; etc...
 names =
-  _("Red Team"),
-  _("Blue Team")
+  _("Red"),
+  _("Blue")
 
 [settings]
 ; freeciv game settings for civ2civ3 ruleset
@@ -2061,8 +2061,8 @@ set = {
 
 ; Victory
 "endspaceship", "DISABLED" ; No spaceship ending
-"endturn", 100 ; Score victory after 100 turns
+"endturn", 5000 ; Actual victory is based on flags after 100 turns
 "spaceship_travel_time", 50
-"victories", "SPACERACE|CULTURE" ; Space race just gives points that can be used as a tie-breaker
+"victories", "SPACERACE" ; Space race just gives points that can be used as a tie-breaker
 
 }
