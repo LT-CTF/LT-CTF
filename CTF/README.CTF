@@ -11,6 +11,9 @@ to score points. The game is decided by score after the turn limit has expired.
 A number of adjustments were made to the LTX rules for better CTF gameplay, or
 because I felt like it. They are, in no particular order:
 
+* The Flagpole wonders cost 70 shields, the same as a Palace, but only one can be built per team and cannot be moved later - Choose their location wisely and coordinate with team-mates.
+* The Flag unit is weak (1D, 50 HP), slow (4 MP, no terrain bonuses), stealthy, floats over water, and can't board other units - Must either hide or be protected on the way out.
+  * If it is destroyed, it instantly returns to its own Flagpole and must be captured again with an adjacent unit to the city.
 * No minimum yields for city centre tiles
 * Gold upkeep is national. No buildings will be sold unless treasury drops below zero.
 * Auto-Attack is enabled, but only for special Interceptor flagged units.
@@ -26,17 +29,22 @@ because I felt like it. They are, in no particular order:
 * Attacking costs all remaining moves - Defenders can't just skirmish and hide back in their cities, they have to come out and meet an invading force in the field.
 * Forced Bombard is off, some units are capable of both bombard and direct attacks.
 * Sea units can't attack shore, only bombard.
-* Bombardment can destroy units completely outside of cities.
+* Bombardment can destroy units completely outside of cities. Otherwise they cannot drop lower than the given % of total hitpoints due to bombardment.
   * Cities get 25% bombardment limit.
   * City walls increases it to 50%.
   * The flag wonder increases it for all team cities by additional 25%.
   * Fortified units get 25% when not in cities or forts.
+  * Units in forts stop at 50%.
   * Units in open stop at 1% one time only in a last gasp defence.
 * Instead of destroying units, nukes act like a heavy bombardment over adjacent tiles - Can't be used to just instakill stacks any time they move towards the flag.
 * Diplomatic units only have 1HP but are immune to bombardment - No partial HP losses for bombarded spies which actually makes no difference, and they die instantly in combat.
 * Tech Upkeep is disabled
 * Cultural Victory is enabled. Your team needs at least 3m culture to win, and exceed the other team by 150%. Each capture is worth 1m, so 3-1 is a victory - This allows to end the game early if one side is a runaway winner. 
 * When your team's flag is captured, your panicked cities maximise industrial capacity in an attempt to seize it back, however this comes at a cost of pollution - Gives a weaker team an opportunity to catch up a little.
+  * +5 base shields.
+  * +100% total output, multiplicative with other bonuses.
+  * +100% production-based pollution rate.
+  * +1 towards GW counter per city per turn.
 * Hex Topology - Because I prefer hex grids. Everything has been tuned towards hex.
 * Migration is off - We're going with a higher citymindist anyway, so it doesn't matter.
 * Borders are disabled - Freely use enemy infrastructure, use military to take city tiles, and military unhappiness is only prevented within a friendly city or a fortress within 3 tiles of one.
@@ -53,4 +61,3 @@ because I felt like it. They are, in no particular order:
 * Food waste for distant cities starts at size 2 - You shouldn't settle a city only to find it can't support itself despite food all around and immediately starve.
 * After reaching empire size limits, every additional city causes unhappiness - This is about capturing the flag not sprawling empires.
 * Ruins gives trade on every tile not just those with trade - If you go to the effort of demolishing your own cities to gain +1 trade, you deserve it.
-
