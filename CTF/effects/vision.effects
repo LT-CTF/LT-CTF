@@ -4,7 +4,7 @@ value   = -1
 reqs    =
     { "type",        "name",       "range", "present"
       "VisionLayer", "Stealth",    "Local", TRUE
-      "UnitFlag",    "SeeStealth", "Local", TRUE
+      "UnitFlag",    "SeeStealth", "Local", FALSE
     }
 
 [effect_no_base_subsurface_vision]
@@ -13,7 +13,7 @@ value   = -1
 reqs    =
     { "type",        "name",          "range", "present"
       "VisionLayer", "Subsurface",    "Local", TRUE
-      "UnitFlag",    "SeeSubsurface", "Local", TRUE
+      "UnitFlag",    "SeeSubsurface", "Local", FALSE
     }
 
 ; Vision benefit from fortress watchtowers
