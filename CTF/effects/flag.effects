@@ -76,3 +76,91 @@ reqs  =
       "Extra",      "Flag Captured", "Local", TRUE
     }
 
+[effect_flag_acceleration_01]
+type  = "Unit_Recover"
+value = 40
+reqs  =
+    { "type",         "name", "range", "present"
+      "UnitClass",    "Flag", "Local", TRUE
+      "MinHitPoints", "11",   "Local", FALSE
+    }
+
+[effect_flag_acceleration_02]
+type  = "Unit_Recover"
+value = 30
+reqs  =
+    { "type",         "name", "range", "present"
+      "UnitClass",    "Flag", "Local", TRUE
+      "MinHitPoints", "11",   "Local", TRUE
+      "MinHitPoints", "21",   "Local", FALSE
+    }
+
+[effect_flag_acceleration_03]
+type  = "Unit_Recover"
+value = 20
+reqs  =
+    { "type",         "name", "range", "present"
+      "UnitClass",    "Flag", "Local", TRUE
+      "MinHitPoints", "21",   "Local", TRUE
+      "MinHitPoints", "31",   "Local", FALSE
+    }
+
+[effect_flag_acceleration_04]
+type  = "Unit_Recover"
+value = 10
+reqs  =
+    { "type",         "name", "range", "present"
+      "UnitClass",    "Flag", "Local", TRUE
+      "MinHitPoints", "31",   "Local", TRUE
+      "MinHitPoints", "41",   "Local", FALSE
+    }
+
+[effect_flag_acceleration_05]
+type  = "Unit_Recover"
+value = 13
+reqs  =
+    { "type",         "name", "range", "present"
+      "UnitClass",    "Flag", "Local", TRUE
+      "MinHitPoints", "41",   "Local", TRUE
+      "MinHitPoints", "52",   "Local", FALSE
+    }
+
+[effect_flag_acceleration_06]
+type  = "Unit_Recover"
+value = 12
+reqs  =
+    { "type",         "name", "range", "present"
+      "UnitClass",    "Flag", "Local", TRUE
+      "MinHitPoints", "52",   "Local", TRUE
+      "MinHitPoints", "64",   "Local", FALSE
+    }
+
+[effect_flag_acceleration_07]
+type  = "Unit_Recover"
+value = 25
+reqs  =
+    { "type",         "name", "range", "present"
+      "UnitClass",    "Flag", "Local", TRUE
+      "MinHitPoints", "64",   "Local", TRUE
+      "MinHitPoints", "76",   "Local", FALSE
+    }
+
+[effect_flag_acceleration_08]
+type  = "Unit_Recover"
+value = 50
+reqs  =
+    { "type",         "name", "range", "present"
+      "UnitClass",    "Flag", "Local", TRUE
+      "MinHitPoints", "76",   "Local", TRUE
+      "MinHitPoints", "101",   "Local", FALSE
+    }
+
+[effect_flag_acceleration_09]
+type  = "Unit_Recover"
+value = 100
+reqs  =
+    { "type",         "name", "range", "present"
+      "UnitClass",    "Flag", "Local", TRUE
+      "MinHitPoints", "101",  "Local", TRUE
+    }
+
