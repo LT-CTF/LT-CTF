@@ -298,9 +298,9 @@ flags         = "Unreachable", "DoesntOccupyTile", "CanPillage", "Airliftable",
 [unitclass_flag]
 ; /* TRANS: Unit class: used adjectivally */
 name          = _("?unitclass:Flag")
-min_speed     = 0
+min_speed     = 4
 hp_loss_pct   = 0
-flags         = "DoesntOccupyTile", "ZOC"
+flags         = "DoesntOccupyTile", "ZOC", "DamageSlows"
 
 ; /* <-- avoid gettext warnings
 ;
@@ -3807,9 +3807,9 @@ build_cost    = 0
 pop_cost      = 0
 attack        = 0
 defense       = 1
-hitpoints     = 50
+hitpoints     = 250
 firepower     = 0
-move_rate     = 4
+move_rate     = 20
 vision_radius_sq = 1
 vision_layer  = "Stealth"
 transport_cap = 0
@@ -3846,9 +3846,9 @@ build_cost    = 0
 pop_cost      = 0
 attack        = 0
 defense       = 1
-hitpoints     = 50
+hitpoints     = 250
 firepower     = 0
-move_rate     = 4
+move_rate     = 20
 vision_radius_sq = 1
 vision_layer  = "Stealth"
 transport_cap = 0

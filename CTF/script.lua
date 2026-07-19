@@ -17,6 +17,8 @@
 
 ctf_flag_delivered_score = 1000
 ctf_final_turn = 100
+ctf_flag_init_hitpoints = 50
+ctf_flag_init_move_points = 4 * 9
 
 ----------------
 -- City Ruins --
@@ -213,7 +215,8 @@ function capture_the_flag(action, actor, target)
   if action:rule_name() ~= "User Action 1" then return false end
   local flag_team = target.owner.team
   local flag_utype = find.unit_type(flag_team.name .. " Flag")
-  local flag = actor.owner:create_unit(actor.tile, flag_utype, 0, nil, -1)
+  local flag = actor.owner:create_unit_full(actor.tile, flag_utype, 0, nil, 
+      ctf_flag_init_move_points, ctf_flag_init_hitpoints, nil)
   flag_captured_bonus_on(flag_team)
   notify.event(nil, target.tile, E.SCRIPT, 
     "%s has captured the %s!", 
