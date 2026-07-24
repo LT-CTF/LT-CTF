@@ -1,19 +1,19 @@
 set aifill 6
 aitoggle AI*1
 playernation AI*1 Hacker 1 XHawk87
-team XHawk87 RedOrBlue
+team XHawk87 Blue
 aitoggle AI*2
 playernation AI*2 "Animal Kingdom" 1 houroftheowl
-team houroftheowl RedOrBlue
+team houroftheowl Red
 aitoggle AI*3
 playernation AI*3 random 1 petromax
-team petromax RedOrBlue
+team petromax Blue
 aitoggle AI*4
 playernation AI*4 random 1 panch93
-team panch93 RedOrBlue
+team panch93 Red
 aitoggle AI*5
 playernation AI*5 "Texan" 1 jwrober
-team jwrober RedOrBlue
+team jwrober Blue
 aitoggle AI*6
 playernation AI*6 "Central Lithuanian" 1 Modeemirotta
-team Modeemirotta RedOrBlue
+team Modeemirotta Red
