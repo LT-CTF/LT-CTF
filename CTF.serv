@@ -2,7 +2,7 @@ rulesetdir CTF
 
 # map
 set mapsize "PLAYER"
-set tilesperplayer 400
+set tilesperplayer 200
 set generator "FRACTURE"
 set huts 0
 set landmass 40
@@ -12,7 +12,7 @@ set steepness 45
 set temperature 60
 set topology "WRAPX|WRAPY|ISO|HEX"
 set wetness 60
-set alltemperate disabled
+set alltemperate enabled
 set tinyisles disabled
 set flatpoles 0
 
@@ -59,8 +59,8 @@ set kicktime "1800"
 # Players
 set autotoggle "DISABLED" # Automatically AI toggles when players connect/disconnect
 set citynames "PLAYER_UNIQUE" # Each player cannot have multiple cities with the same name
-set first_timeout "-1"
-set fixedlength enabled
+set first_timeout "0"
+set fixedlength disabled
 set maxplayers 500
 set minplayers 1
 set nationset all
