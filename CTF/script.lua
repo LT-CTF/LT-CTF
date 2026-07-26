@@ -165,9 +165,9 @@ end
 
 function notify_leaderboard()
   local team_scores = team_leaderboard()
-  notify.event(nil, nil, E.SCRIPT, "Leaderboard:")
+  notify.event(nil, nil, E.CHAT_MSG, "Leaderboard:")
   for i, team in ipairs(team_scores) do
-    notify.event(nil, nil, E.SCRIPT, "- %s: %d flag points (%d civ score)",
+    notify.event(nil, nil, E.CHAT_MSG, "- %s: %d flag points (%d civ score)",
       team.name, team.flag_score, team.civ_score)
   end
 end
@@ -176,7 +176,7 @@ function check_scores(turn, year)
   notify_leaderboard()
   if turn >= ctf_final_turn then
     local winning_team = find.team(team_leaderboard()[1].name)
-    notify.event(nil, nil, E.SCRIPT, "The %s team has won!", winning_team.name)
+    notify.event(nil, nil, E.GAME_END, "The %s team has won!", winning_team.name)
     local winner = nil
     local highscore = 0
     for player in winning_team:members_iterate() do
@@ -284,3 +284,20 @@ function log_flagpole_built(building, city)
 end
 
 signal.connect("building_built", "log_flagpole_built")
+
+function list_known_techs()
+  log.normal("Known techs:")
+  for tech in find.technologies_iterate() do
+    if tech_known(tech) then
+      log.normal("%s", tech)
+    end
+  end
+end
+
+function log_tech_rate(turn, year)
+  if turn % 20 == 0 then
+    list_known_techs()
+  end
+end
+
+signal.connect("turn_begin", "log_tech_rate")

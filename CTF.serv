@@ -24,6 +24,10 @@ set gold "50"
 set startpos "VARIABLE"
 set teamplacement "CLOSEST"
 
+# Tweaks
+set sciencebox 25
+set shieldbox 70
+
 # technical
 set autosaves "TURN|GAMEOVER|QUITIDLE|INTERRUPT"
 set compresstype "LIBZ"
@@ -67,7 +71,7 @@ set nationset all
 set naturalcitynames "ENABLED"
 set persistentready "DISABLED"
 set phasemode "ALL"
-set plrcolormode "PLR_ORDER"
+set plrcolormode "TEAM_ORDER"
 set timeaddenemymove 0
 set timeout 90000
 set traitdistribution "FIXED"
