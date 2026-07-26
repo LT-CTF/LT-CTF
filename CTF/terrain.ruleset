@@ -1647,7 +1647,7 @@ reqs           =
     }
 buildable      = FALSE
 removal_time   = 0
-flags          = "GlobalWarming"
+;flags          = "GlobalWarming"
 helptext       = _("\
 Marks a city that is affected by a team losing their flag.
 ")
