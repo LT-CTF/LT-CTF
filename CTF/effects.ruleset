@@ -4651,7 +4651,7 @@ reqs    =
 
 [effect_city_shield]
 type    = "Output_Add_Tile"
-value   = 1
+value   = 2
 reqs    =
     { "type", "name", "range"
       "CityTile", "Center", "Local"
